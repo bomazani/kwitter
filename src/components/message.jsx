@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import { Icon, Item } from 'semantic-ui-react';
-
+import { Icon, Comment } from 'semantic-ui-react';
 
 class Message extends Component {
 
 
   render() {
     return (
-      <Item.Group>
-        <Item.Content>
-          <Item.Header>
+      <Comment>
+        <Comment.Content>
+          <Comment.Author>
             Username
-          </Item.Header>
-          <Item.Description>
+          </Comment.Author>
+          <Comment.Text>
             Message text
-          </Item.Description>
-          <Item.Extra>
+          </Comment.Text>
+          <Comment.Actions>
             <Icon color='red' name='heart' /> 10 Likes
-          </Item.Extra>
-        </Item.Content>
-      </Item.Group>
+          </Comment.Actions>
+        </Comment.Content>
+      </Comment>
     )
   }
 }
