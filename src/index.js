@@ -1,8 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./components/App";
+import { createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import todoApp from "./reducers";
+import registerServiceWorker from "./registerServiceWorker";
+import "todomvc-app-css/index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import thunk from "redux-thunk";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(todoApp, composeEnhancers(applyMiddleware(thunk)));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById("root")
+);
+
 registerServiceWorker();
