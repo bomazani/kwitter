@@ -4,6 +4,7 @@ import Message from './components/message.jsx';
 
 import logo from './logo.svg';
 import './App.css';
+import UserLoginScreen from './components/user-login-screen';
 
 class App extends Component {
   render() {
@@ -14,9 +15,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Message />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <UserLoginScreen/>
       </div>
     );
   }
