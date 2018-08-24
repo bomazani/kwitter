@@ -8,8 +8,8 @@ class RegistrationForm extends Component {
       <Segment raised>
         <Form>
           <Form.Field>
-            <Input placeholder='Username' />
-            <Input placeholder='password' type='password' />
+            <Input transparent placeholder='Username' />
+            <Input transparent placeholder='password' type='password' />
           </Form.Field>
         </Form>
       </Segment>

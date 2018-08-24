@@ -9,10 +9,10 @@ class Message extends Component {
       <Comment>
         <Comment.Content>
           <Comment.Author>
-            Username
+            {this.props.username}
           </Comment.Author>
           <Comment.Text>
-            Message text
+            {this.props.message}
           </Comment.Text>
           <Comment.Actions>
             <Icon color='red' name='heart' /> 10 Likes

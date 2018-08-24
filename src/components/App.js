@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Components
-import Message from './message.jsx';
+import MessageList from './MessageList.jsx';
 import UserLoginScreen from './user-login-screen';
 
 // static files
@@ -17,8 +17,8 @@ class App extends Component {
       <div className="App">
         { /*  contains login and registration forms */ }
         <UserLoginScreen />
-
-        <Message />
+        <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies."},
+                                {"username": "bob", "message": "i think male crop tops are in style"}]} />
       </div>
     );
   }
