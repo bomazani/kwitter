@@ -6,12 +6,13 @@ class LoginForm extends React.Component {
     render() {
         return (
             <Segment raised>
-            <Form>
-                <Form.Field>
-                <Input placeholder='Username' />
-                <Input placeholder='password' type='password' />
-                <Input placeholder='Display Name' />                </Form.Field>
-            </Form>
+                <Form>
+                    <Form.Field>
+                        <Input placeholder='Username' />
+                        <Input placeholder='password' type='password' />
+                        <Input placeholder='Display Name' />
+                    </Form.Field>
+                </Form>
             </Segment>
         )    
     }
