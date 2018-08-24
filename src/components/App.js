@@ -15,9 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { /*  contains login and registration forms */ }
         <UserLoginScreen />
-
+        <br/>
         <Message />
       </div>
     );
