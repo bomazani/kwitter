@@ -15,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { /*  contains login and registration forms */ }
         <UserLoginScreen />
+        <br />
         <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies."},
                                 {"username": "bob", "message": "i think male crop tops are in style"}]} />
       </div>
