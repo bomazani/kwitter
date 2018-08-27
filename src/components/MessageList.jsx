@@ -8,7 +8,7 @@ class MessageList extends Component {
         return (
             <React.Fragment>
                 <ul>
-                    {this.props.messages.map(message => <Message username={message.username} message={message.message}/>)}
+                    {this.props.messages.map(message => <Message key={message.id} username={message.username} message={message.message}/>)}
                 </ul>
             </React.Fragment>
         );
