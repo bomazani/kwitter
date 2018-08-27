@@ -13,7 +13,7 @@ import registerServiceWorker from "./registerServiceWorker";
 
 // Import App
 import App from "./components/App";
-import reducers from './store';
+import reducers from './reducers';
 
 // Setup Redux Devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

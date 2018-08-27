@@ -1,28 +1,25 @@
 import React from 'react';
-import Axios from 'axios';
+// import Axios from 'axios';
 import { connect } from 'react-redux';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
+import { loginUser } from '../actions'
   
 class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {},
-            active: false
-        }
-
-        this.submitForm = this.submitForm.bind(this);
+    state = {
+        username: '',
+        password: ''
     }
-    componentDidMount() {
-        this.props.loginUser()
-    }
-    submitForm( e ) {
-            Axios.post( 'https://kwitter-api.herokuapp.com/auth/login' ,{
-                username: 'edwin',
-                password: 'edwin'
 
-            })
-            .then( res => alert( res ) )
+    updateUsername = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+
+    updatePassword = (e) => {
+        this.setState({
+            password: e.target.value
+        })
     }
 
     render() {
@@ -30,14 +27,20 @@ class LoginForm extends React.Component {
             <Segment raised>
                 <Form>
                     <Form.Field>
-                        <Input placeholder='Username' />
-                        <Input placeholder='password' type='password' />
+                        <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
+                        <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                     </Form.Field>
-                    <Button type='submit' onClick={ this.submitForm } >submit</Button>
+                    <Button type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>submit</Button>
                 </Form>
             </Segment>
-        )    
+        )
     }
 }
 
-export default connect()(LoginForm);
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        loginUser: (username, password) => dispatch(loginUser(username, password))
+    }
+}
+
+export default connect(undefined, mapDispatchtoProps)(LoginForm);
