@@ -17,8 +17,8 @@ class App extends Component {
       <div className="App">
         <UserLoginScreen />
         <br />
-        <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies."},
-                                {"username": "bob", "message": "i think male crop tops are in style"}]} />
+        <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies.", "id": 1},
+                                {"username": "bob", "message": "i think male crop tops are in style", "id": 2}]} />
       </div>
     );
   }
