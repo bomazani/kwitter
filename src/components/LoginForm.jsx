@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
                     </Form.Field>
                 </Form>
             </Segment>
-        )    
+        )
     }
 }
 
