@@ -1,5 +1,4 @@
 import React from 'react';
-// import Axios from 'axios';
 import { connect } from 'react-redux';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
 import { loginUser } from '../actions'
