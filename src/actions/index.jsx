@@ -3,7 +3,7 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const REGISTER_USER = 'REGISTER_USER';
 export const GET_USER = 'GET_USER';
-export const GET_MESSAGE = 'GET_MESSAGE';
+export const GET_MESSAGES = 'GET_MESSAGES';
 
 export const loginUser = ( username, password ) => dispatch => {
     console.log("username", username)
@@ -14,7 +14,11 @@ export const loginUser = ( username, password ) => dispatch => {
     })
     .then(res => {
         if (res.data.success) {
-            dispatch( {type: LOGIN_USER, token: res.data.token, id: res.data.id, isLoggedIn: true} );
+            dispatch( {type: LOGIN_USER, username: username, token: res.data.token, id: res.data.id, isLoggedIn: true} );
+            Axios.get( 'https://kwitter-api.herokuapp.com/messages' )
+            .then(res => {
+                dispatch( {type: GET_MESSAGES, messages: res.data.messages} )
+            })
         }
         else {
             console.log("NO")
