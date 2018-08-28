@@ -1,6 +1,6 @@
-import { LOGIN_USER, REGISTER_USER, GET_MESSAGE, LOGOUT_USER } from "../actions";
+import { LOGIN_USER, REGISTER_USER, GET_MESSAGES, LOGOUT_USER } from "../actions";
 
-const initialState = { session: {}, user: {}, message: {} }
+const initialState = { session: {}, user: {}, messages: [] }
 
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -9,6 +9,7 @@ export default (state = initialState, action) => {
                 ...state,
                 session: {
                     token: action.token,
+                    username: action.username,
                     id: action.id,
                     isLoggedIn: action.isLoggedIn
                 }
@@ -21,9 +22,10 @@ export default (state = initialState, action) => {
                     displayName: action.displayName
                 }
             }
-        case GET_MESSAGE:
+        case GET_MESSAGES:
             return {
-                result: action.payload
+                ...state,
+                messages: action.messages
             }
         case LOGOUT_USER:
             return {

@@ -14,6 +14,7 @@ import registerServiceWorker from "./registerServiceWorker";
 // Import App
 import App from "./components/App";
 import reducers from './reducers';
+import 'semantic-ui-css/semantic.css';
 
 // Setup Redux Devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

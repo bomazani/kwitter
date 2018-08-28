@@ -15,7 +15,7 @@ class Message extends Component {
             {this.props.message}
           </Comment.Text>
           <Comment.Actions>
-            <Icon color='red' name='heart' /> 10 Likes
+            <Icon color='red' name='heart' /> {this.props.numLikes}
           </Comment.Actions>
         </Comment.Content>
       </Comment>

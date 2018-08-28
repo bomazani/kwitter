@@ -22,7 +22,6 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const { session } =  this.props
 
         return (
@@ -32,8 +31,8 @@ class LoginForm extends React.Component {
                         <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                         <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                     </Form.Field>
-                    <Button type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
-                    { session.isLoggedIn && <Button type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
+                    <Button inverted color='blue' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
+                    { session.isLoggedIn && <Button inverted color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
                 </Form>
             </Segment>
         )

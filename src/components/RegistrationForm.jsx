@@ -37,7 +37,7 @@ class RegistrationForm extends Component {
             <Input transparent placeholder='Display Name' onChange={this.updateDisplay}/>
             <Input transparent placeholder='Password' type='password' onChange={this.updatePassword}/>
           </Form.Field>
-          <Button type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
+          <Button inverted color='blue' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
         </Form>
       </Segment>
     )
