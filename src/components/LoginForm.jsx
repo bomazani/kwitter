@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
-import { loginUser } from '../actions'
+import { loginUser, logoutUser } from '../actions'
   
 class LoginForm extends React.Component {
     state = {
@@ -22,6 +22,9 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        console.log(this.props)
+        const { session } =  this.props
+
         return (
             <Segment raised>
                 <Form>
@@ -29,17 +32,23 @@ class LoginForm extends React.Component {
                         <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                         <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                     </Form.Field>
-                    <Button type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>submit</Button>
+                    <Button type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
+                    { session.isLoggedIn && <Button type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
                 </Form>
             </Segment>
         )
     }
 }
 
+const mapStatetoProps = state => ({
+    session: state.session
+})
+
 const mapDispatchtoProps = (dispatch) => {
     return {
-        loginUser: (username, password) => dispatch(loginUser(username, password))
+        loginUser: (username, password) => dispatch(loginUser(username, password)),
+        logoutUser: () => dispatch(logoutUser())
     }
 }
 
-export default connect(undefined, mapDispatchtoProps)(LoginForm);
+export default connect(mapStatetoProps, mapDispatchtoProps)(LoginForm);
