@@ -5,7 +5,7 @@ export const REGISTER_USER = 'REGISTER_USER';
 export const GET_USER = 'GET_USER';
 export const GET_MESSAGES = 'GET_MESSAGES';
 
-export const loginUser = ( username, password ) => dispatch => {
+export const loginUser = ( username, password ) => (dispatch, getState) => {
     console.log("username", username)
     console.log("password", password)
     Axios.post( 'https://kwitter-api.herokuapp.com/auth/login', {
@@ -18,6 +18,10 @@ export const loginUser = ( username, password ) => dispatch => {
             Axios.get( 'https://kwitter-api.herokuapp.com/messages' )
             .then(res => {
                 dispatch( {type: GET_MESSAGES, messages: res.data.messages} )
+            })
+            Axios.get( 'https://kwitter-api.herokuapp.com/users/' + getState().session.id )
+            .then(res => {
+                dispatch( {type: GET_USER, user: res.data.user} )
             })
         }
         else {

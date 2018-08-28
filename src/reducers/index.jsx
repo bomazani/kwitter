@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_MESSAGES, LOGOUT_USER } from "../actions";
+import { LOGIN_USER, REGISTER_USER, GET_MESSAGES, LOGOUT_USER, GET_USER } from "../actions";
 
 const initialState = { session: {}, user: {}, messages: [] }
 
@@ -31,6 +31,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 session: {}
+            }
+        case GET_USER:
+            return {
+                ...state,
+                user: action.user
             }
         default:
             return state
