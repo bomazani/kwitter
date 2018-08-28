@@ -15,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>{this.props.loginuser}</div>
         <UserLoginScreen />
         <br />
         <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies.", "id": 1},
@@ -24,4 +25,8 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const mapStatetoProps = state => ({
+  loginuser: state.session.id
+})
+
+export default connect(mapStatetoProps, undefined)(App);
