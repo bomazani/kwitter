@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>Hello, {this.props.loginuser}!</div>
+        <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
         <Grid columns='equal'>
           <Grid.Row columns={3}>
             <Grid.Column>
