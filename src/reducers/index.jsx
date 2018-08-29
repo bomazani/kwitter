@@ -1,4 +1,4 @@
-import { LOGIN_USER, REGISTER_USER, GET_MESSAGES, LOGOUT_USER, GET_USER } from "../actions";
+import { LOGIN_USER, LOG_ERROR, REGISTER_USER, GET_MESSAGES, POST_MESSAGE, LOGOUT_USER, GET_USER } from "../actions";
 
 const initialState = { session: {}, user: {}, messages: [] }
 
@@ -27,6 +27,11 @@ export default (state = initialState, action) => {
                 ...state,
                 messages: action.messages
             }
+        case POST_MESSAGE:
+            return {
+                ...state,
+                messages: [ state.messages, { text: action.message, likes: [], id: undefined, createdAt: Date() }  ]
+            }
         case LOGOUT_USER:
             return {
                 ...state,
@@ -37,6 +42,11 @@ export default (state = initialState, action) => {
                 ...state,
                 user: action.user
             }
+        case LOG_ERROR:
+          return {
+            ...state,
+            errors: [ ...state.errors, action.error ]
+          }
         default:
             return state
     }
