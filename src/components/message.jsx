@@ -6,6 +6,8 @@ class Message extends Component {
 
   render() {
     return (
+      <Comment.Group>
+
       <Comment>
         <Comment.Content>
           <Comment.Author>
@@ -18,7 +20,8 @@ class Message extends Component {
             <Icon color='red' name='heart' /> {this.props.numLikes}
           </Comment.Actions>
         </Comment.Content>
-      </Comment>
+        </Comment>
+        </Comment.Group>
     )
   }
 }

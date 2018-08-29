@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Grid, Segment } from 'semantic-ui-react';
 
 // Components
 import MessageList from './MessageList.jsx';
@@ -16,11 +17,32 @@ class App extends Component {
     return (
       <div className="App">
         <div>Hello, {this.props.loginuser}!</div>
-        <UserLoginScreen />
-        <br />
-        <MessageList messages={[{"username": "tj", "message": "Mikaiyl likes to play with Barbies.", "id": 1},
-                                {"username": "bob", "message": "i think male crop tops are in style", "id": 2}]} />
-      </div>
+        <Grid columns='equal'>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <UserLoginScreen />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <MessageList messages={ [] } />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
+        </div>
     );
   }
 }

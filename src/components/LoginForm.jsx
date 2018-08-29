@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Segment, Form, Input, Button } from 'semantic-ui-react';
-import { loginUser, logoutUser } from '../actions'
-  
+import { Grid, Segment, Form, Input, Button } from 'semantic-ui-react';
+import { loginUser, logoutUser } from '../actions';
+
 class LoginForm extends React.Component {
     state = {
         username: '',
@@ -26,6 +26,9 @@ class LoginForm extends React.Component {
 
         return (
             <Segment raised>
+            <Grid columns='equal'>
+               <Grid.Column></Grid.Column>
+               <Grid.Column>
                 <Form>
                     <Form.Field>
                         <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
@@ -34,6 +37,9 @@ class LoginForm extends React.Component {
                     <Button inverted color='blue' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
                     { session.isLoggedIn && <Button inverted color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
                 </Form>
+              </Grid.Column>
+              <Grid.Column></Grid.Column>
+            </Grid>
             </Segment>
         )
     }

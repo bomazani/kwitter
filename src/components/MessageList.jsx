@@ -8,14 +8,14 @@ class MessageList extends Component {
     state = {
         message: ''
     }
-    
+
     updateMessage = (e) => {
         this.setState({
             message: e.target.value
         })
     }
 
-    render() { 
+    render() {
         return (
             <React.Fragment>
                 <Input value={this.state.message} placeholder='New Message' onChange={this.updateMessage}/>
