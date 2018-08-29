@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Segment, Form, Input, Button } from 'semantic-ui-react';
+import { Grid, Segment, Form, Input, Button } from 'semantic-ui-react';
 import { registerUser } from '../actions'
 
 class RegistrationForm extends Component {
@@ -14,7 +14,7 @@ class RegistrationForm extends Component {
     this.setState({
       username: e.target.value
     })
-  }  
+  }
 
   updateDisplay = (e) => {
     this.setState({
@@ -33,9 +33,15 @@ class RegistrationForm extends Component {
       <Segment raised>
         <Form>
           <Form.Field>
-            <Input transparent placeholder='Username' onChange={this.updateUsername}/>
-            <Input transparent placeholder='Display Name' onChange={this.updateDisplay}/>
-            <Input transparent placeholder='Password' type='password' onChange={this.updatePassword}/>
+            <Grid columns='equal'>
+               <Grid.Column></Grid.Column>
+               <Grid.Column>
+                <Input  placeholder='Username' onChange={this.updateUsername}/>
+                <Input  placeholder='Display Name' onChange={this.updateDisplay}/>
+                <Input  placeholder='Password' type='password' onChange={this.updatePassword}/>
+              </Grid.Column>
+              <Grid.Column></Grid.Column>
+            </Grid>
           </Form.Field>
           <Button inverted color='blue' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
         </Form>
