@@ -33,7 +33,7 @@ class MessageList extends Component {
                   <Button inverted color='blue'>Submit</Button>
                 </Form>
                 <ul>
-                  { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id } username={ message.id /* this.getPostUsername( this.props.userList, message.id ) */ } message={ message.text } numLikes={ message.likes.length } /> ) }
+                  { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id } username={ this.getPostUsername( this.props.userList, message.userId )  } message={ message.text } numLikes={ message.likes.length } /> ) }
                 </ul>
             </React.Fragment>
         );
