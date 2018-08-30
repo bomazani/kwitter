@@ -10,7 +10,9 @@ class UserLoginScreen extends React.Component {
           <LoginForm />
           <br/>
           <p>Registration Form</p>
+          <div id="mainpage"></div>
           <RegistrationForm />
+          
         </React.Fragment> )
     }
 }
