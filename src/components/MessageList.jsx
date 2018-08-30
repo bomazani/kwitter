@@ -6,7 +6,9 @@ import { postMessageText } from '../actions'
 
 class MessageList extends Component {
     state = {
-        message: ''
+        message: '',
+        users: [],
+        loaded: false
     }
 
     updateMessage = (e) => {
@@ -15,15 +17,23 @@ class MessageList extends Component {
         })
     }
 
+    getPostUsername = ( users, id ) => {
+        return users.find( user => user.id === id ).displayName
+    }
+
+    componentDidMount = () => {
+      this.setState( { loaded: true } )
+    }
+
     render() {
         return (
           <React.Fragment>
               <Form onSubmit={ () => this.props.postMessageText( this.state.message ) }>
-                  <Input value={this.state.message} placeholder='New Message' onChange={ this.updateMessage }/>
+                  <Input value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
                   <Button inverted color='blue'>Submit</Button>
                 </Form>
                 <ul>
-                    {this.props.messageList.map(message => <Message key={message.id} username={message.id} message={message.text} numLikes={message.likes.length}/>)}
+                  { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id } username={ this.getPostUsername( this.props.userList, message.userId )  } message={ message.text } numLikes={ message.likes.length } /> ) }
                 </ul>
             </React.Fragment>
         );
@@ -31,7 +41,8 @@ class MessageList extends Component {
 }
 
 const mapStatetoProps = state => ({
-    messageList: state.messages
+    messageList: state.messages,
+    userList: state.userList
 })
 
 const mapDispatchToProps = ( dispatch ) => {

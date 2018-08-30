@@ -4,6 +4,7 @@ export const LOG_ERROR = 'LOGIN_ERROR';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const REGISTER_USER = 'REGISTER_USER';
 export const GET_USER = 'GET_USER';
+export const GET_USERS_LIST = 'GET_USERS_LIST';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
 
@@ -16,19 +17,29 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
     }).then(res => {
         if (res.data.success) {
             dispatch( {type: LOGIN_USER, username: username, token: res.data.token, id: res.data.id, isLoggedIn: true} );
-            Axios.get( 'https://kwitter-api.herokuapp.com/messages' )
-            .then(res => {
-                dispatch( {type: GET_MESSAGES, messages: res.data.messages} )
-            })
+
+        } else {
+            console.log('Did not return successfully\nError: ', res.data )
+        }
+    } ).then( () => {
+            // Get list of users and save to state
+            Axios.get( 'https://kwitter-api.herokuapp.com/users' ).then( res => {
+                console.log( typeof( res.data.users ), "\n", res.data.users )
+                dispatch( { type: GET_USERS_LIST, userList: res.data.users } )
+            } )
+    } ).then( () => {
+            // Get logged in users info and save to state
             Axios.get( 'https://kwitter-api.herokuapp.com/users/' + getState().session.id )
             .then(res => {
                 dispatch( { type: GET_USER, user: res.data.user } )
             })
-        }
-        else {
-            console.log('Did not return successfully\nError: ', res.data )
-        }
-      } )
+
+    } ).then( () => {
+            // Get messages and save to state
+            Axios.get( 'https://kwitter-api.herokuapp.com/messages' ).then(res => {
+                dispatch( {type: GET_MESSAGES, messages: res.data.messages} )
+            })
+    } )
 }
 
 export const logoutUser = () => dispatch => {
@@ -44,20 +55,18 @@ export const registerUser = (username, displayName, password) => dispatch => {
     })
     .then(res => {
         dispatch( {type: REGISTER_USER, username: res.data.username, displayName: res.data.displayName})
-        console.log(res.data)})
+    })
 }
 
 export const postMessageText = ( text ) => ( dispatch, getState ) => {
-  console.log( text )
-  Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
-  Axios.post( 'https://kwitter-api.herokuapp.com/messages',{
-    text: text
-  } ).then( ( res ) => {
-    console.log( res.data )
-    dispatch( { type: POST_MESSAGE, message: text } )
-  } )
+    Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
+    Axios.post( 'https://kwitter-api.herokuapp.com/messages',{
+      text: text
+    } ).then( ( res ) => {
+      dispatch( { type: POST_MESSAGE, message: text } )
+    } )
 }
 
 export const logError = ( err ) => dispatch => {
-  dispatch( { type: LOG_ERROR, error: err } )
+    dispatch( { type: LOG_ERROR, error: err } )
 }
