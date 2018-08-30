@@ -2,12 +2,9 @@
   text-align: center;
 }
 
-#header {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
+
 div {
-  background: lightblue;
+  background: #45c8ec;
 }
 #regform {
   position: relative;
@@ -17,14 +14,12 @@ div {
   background: lightblue;
   height: 50%;
 }
-.List {
+#List {
   
-  border: 2px solid black;
-
-  text-align: center;
+width:25%;
 }
 #headerImg {
-  width: 25%;
+  height: 100%;
  text-align: left;
  border: 2px solid black;
 }
@@ -38,7 +33,15 @@ div {
   flex-direction: row;
   height: 100vh;
   width:100vh;
+  background: #0098d3;
   
 }
-
+#headline {
+  position: relative;
+  left: 45%;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  margin:10px;
+}
 

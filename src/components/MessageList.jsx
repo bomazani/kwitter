@@ -30,7 +30,7 @@ class MessageList extends Component {
           <React.Fragment>
               <Form onSubmit={ () => this.props.postMessageText( this.state.message ) }>
                   <Input value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
-                  <Button inverted color='blue'>Submit</Button>
+                  <Button inverted color='#0098dc'>Submit</Button>
                 </Form>
                 <ul>
                   { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id } username={ this.getPostUsername( this.props.userList, message.userId )  } message={ message.text } numLikes={ message.likes.length } /> ) }
