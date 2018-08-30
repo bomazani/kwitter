@@ -8,6 +8,8 @@ import { Grid, Segment } from 'semantic-ui-react';
 // Components
 import MessageList from './MessageList.jsx';
 import UserLoginScreen from './user-login-screen';
+import Header from './Header.jsx';
+
 
 // static files
 import './App.css';
@@ -16,7 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>Hello, {this.props.loginuser}!</div>
+        <div>{Header()}</div>
+        <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
         <Grid columns='equal'>
           <Grid.Row columns={3}>
             <Grid.Column>
