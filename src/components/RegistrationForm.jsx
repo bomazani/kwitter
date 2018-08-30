@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Segment, Form, Input, Button } from 'semantic-ui-react';
 import { registerUser } from '../actions'
+import "./App.css"
 
 class RegistrationForm extends Component {
   state = {
@@ -39,11 +40,12 @@ class RegistrationForm extends Component {
                 <Input  placeholder='Username' onChange={this.updateUsername}/>
                 <Input  placeholder='Display Name' onChange={this.updateDisplay}/>
                 <Input  placeholder='Password' type='password' onChange={this.updatePassword}/>
+              
+          <Button id="regform" inverted color='white' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
               </Grid.Column>
               <Grid.Column></Grid.Column>
             </Grid>
           </Form.Field>
-          <Button inverted color='blue' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
         </Form>
       </Segment>
     )

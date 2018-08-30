@@ -2,27 +2,43 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#header {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+div {
+  background: lightblue;
+}
+#regform {
+  position: relative;
+  top: 10px;
+}
+#mainpage {
+  background: lightblue;
+  height: 50%;
+}
+.List {
+  
+  border: 2px solid black;
+
+  text-align: center;
+}
+#headerImg {
+  width: 25%;
+ text-align: left;
+ border: 2px solid black;
+}
+.container {
+  float: right;
+  width: 75%;
+  margin-left: 5px;
+}
+#Userpage {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width:100vh;
+  
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
