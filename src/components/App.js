@@ -9,8 +9,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import MessageList from './MessageList.jsx';
 import UserLoginScreen from './user-login-screen';
 import Header from './Header.jsx';
-
-
+import UserSettings from './UserSettings.jsx';
 import UserPage from "./UserPage.jsx";
 
 
@@ -21,14 +20,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-<<<<<<< HEAD
-        <div id="header">Hello Please Login or Register {this.props.loginuser}!</div>
-        <Grid id="mainpage" columns='equal'>
-=======
-        <div>{Header()}</div>
-        <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
         <Grid columns='equal'>
->>>>>>> 1d2f19b8fe9d2acbbe7aa6d56b1f15a1b691cf21
+        <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <Header />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          
           <Grid.Row columns={3}>
             <Grid.Column>
             </Grid.Column>
@@ -46,6 +61,17 @@ class App extends Component {
             <Grid.Column>
               <Segment>
                 <MessageList messages={ [] } />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <UserSettings/>
               </Segment>
             </Grid.Column>
             <Grid.Column>

@@ -6,6 +6,10 @@
   font-size: 20px;
   margin-bottom: 20px;
 }
+#greeting {
+  background: lightblue;
+  height: 10%;
+}
 div {
   background: lightblue;
 }

@@ -23,9 +23,7 @@ class UserPage extends Component {
                   USERNAME:
                   </p>
                   <p>LIKES:</p>
-                 <p> MESSAGES:</p>
-                 <p> FRIENDS:</p>
-                    
+                 <p> MESSAGES:</p>                    
                 </Container>
                 </div>
                 <div class="container">
@@ -34,22 +32,7 @@ class UserPage extends Component {
                 <Header as='h5' attached='top'>
                 Name
                 </Header>
-                <MessageList attached><Message/></MessageList>
-                <Header as='h5' attached>
-                Kyle
-                </Header>
-                
-                <MessageList attached>
-                <Message/>
-                </MessageList>
-                <Header as='h5' attached>
-                Alex
-                </Header>
-                <MessageList attached><Message/></MessageList>
-                <Message warning attached='bottom'>
-                <Icon name='warning' />
-                You've reached the end of this content segment!
-                </Message>
+                <MessageList />
                 </div>
                 </div>
         </div>
