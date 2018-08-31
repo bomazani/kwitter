@@ -22,7 +22,9 @@ class App extends Component {
     return (
       <div className="App">
         <div>{Header()}</div>
-        <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
+        <div class="greeting">
+          <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
+        </div>
         <Grid columns='equal'>
           <Grid.Row columns={3}>
             <Grid.Column>
