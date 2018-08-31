@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
         case POST_MESSAGE:
             return {
                 ...state,
-                messages: [ ...state.messages, { text: action.message, likes: [], id: undefined, createdAt: Date() }  ]
+                messages: [ ...state.messages, { text: action.message, likes: [], userId: state.user.id, createdAt: Date() }  ]
             }
         case LOGOUT_USER:
             return {

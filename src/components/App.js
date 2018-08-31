@@ -9,8 +9,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import MessageList from './MessageList.jsx';
 import UserLoginScreen from './user-login-screen';
 import Header from './Header.jsx';
-
-
+import UserSettings from './UserSettings.jsx';
 import UserPage from "./UserPage.jsx";
 
 
@@ -21,11 +20,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>{Header()}</div>
-        <div class="greeting">
-          <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}!</div>
-        </div>
         <Grid columns='equal'>
+        <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <Header />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          
           <Grid.Row columns={3}>
             <Grid.Column>
             </Grid.Column>
@@ -43,6 +61,17 @@ class App extends Component {
             <Grid.Column>
               <Segment>
                 <MessageList messages={ [] } />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <UserSettings/>
               </Segment>
             </Grid.Column>
             <Grid.Column>
