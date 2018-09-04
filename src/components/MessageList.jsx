@@ -13,7 +13,8 @@ class MessageList extends Component {
 
     updateMessage = (e) => {
         this.setState({
-          message: e.target.value
+          message: e.target.value,
+
         })
     }
 
@@ -47,7 +48,7 @@ const mapStatetoProps = state => ({
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
-    postMessageText: ( text ) => dispatch( postMessageText( text ) )
+    postMessageText: ( text, key ) => dispatch( postMessageText( text, key ) )
   }
 }
 
