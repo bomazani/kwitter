@@ -56,6 +56,33 @@ class App extends Component {
               <Grid.Column>
               </Grid.Column>
             </Grid.Row>
+           
+         
+          
+          
+      
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <MessageList messages={ [] } />
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <UserSettings/>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
          
         </Grid>
 
