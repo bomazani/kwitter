@@ -1,10 +1,10 @@
 import React from 'react';
-import duck from "../images/kwitterduck.jpg";
+import Lemur from "../images/KwitterLemurs.jpg";
 
-console.log(duck);
+console.log(Lemur);
 
 function Header() {
-    return <img src= {duck} alt="Flipping Duck"/>;
+    return <img id="Lemur" src= {Lemur} alt="Lemurs"/>;
 }
 
 export default Header;

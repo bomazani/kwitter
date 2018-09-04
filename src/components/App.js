@@ -20,63 +20,43 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Grid columns='equal'>
-        <Grid.Row columns={3}>
+        
+          <Grid columns='equal' >
+          <Grid.Row columns={3} >
+          <Grid.Column>
+              </Grid.Column>
             <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <Header />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <UserLoginScreen />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <MessageList messages={ [] } />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <UserSettings/>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
+                <Segment id="LemurContainer">
+                  <Header />
+                </Segment>
+              </Grid.Column>
+              <Grid.Column>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={3}>
+              <Grid.Column>
+              </Grid.Column>
+              <Grid.Column >
+                <Segment id="loginform">
+                  <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+                </Segment>
+              </Grid.Column>
+              <Grid.Column>
+              </Grid.Column>
+            </Grid.Row>
+            
+            <Grid.Row columns={3} id="loginform">
+              <Grid.Column>
+              </Grid.Column>
+              <Grid.Column>
+                <Segment  >
+                  <UserLoginScreen />
+                </Segment>
+              </Grid.Column>
+              <Grid.Column>
+              </Grid.Column>
+            </Grid.Row>
+         
         </Grid>
 
         </div>

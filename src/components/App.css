@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  background-image: url('../images/Kwitter Background.jpeg');
+  font-family: 'Roboto', sans-serif;
 }
-
+#Lemur {
+  height: 385px;
+  width: 100%;
+}
+#LemurContainer {
+  height: 400px;
+  border-radius: 25px;
+}
 #header {
   font-size: 20px;
   margin-bottom: 20px;
@@ -10,8 +19,12 @@
   background: lightblue;
   height: 10%;
 }
-div {
-  background: #45c8ec;
+#loginform {
+  
+  border-radius: 25px;
+}
+#logincolor {
+  background:#0098d3;
 }
 #regform {
   position: relative;
