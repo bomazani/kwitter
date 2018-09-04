@@ -12,6 +12,7 @@ class UserPage extends Component {
     render() {
         return (
             <div id="Userpage">
+<<<<<<< HEAD
              <Grid celled>
                 <Grid.Row >
                  <Grid.Column id="UserPage" width={3} >
@@ -47,6 +48,32 @@ class UserPage extends Component {
                 <Grid.Column width={3}>
                 <div>
                  <Button negative>Logout</Button>
+=======
+                <div id="headerImg">
+                <Reveal animated='move'>
+                <Reveal.Content visible>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='small' />
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                    <Image src='https://react.semantic-ui.com/images/avatar/large/chris.jpg' size='small' />
+                </Reveal.Content>
+                </Reveal>
+                <Container>
+                    <p>
+                  USERNAME:
+                  </p>
+                  <p>LIKES:</p>
+                 <p> MESSAGES:</p>                    
+                </Container>
+                </div>
+                <div class="container">
+                <div id="message">Messages Go Here<MessageList/></div>
+                <div class="List"> Message List is here
+                <Header as='h5' attached='top'>
+                Name
+                </Header>
+                <MessageList />
+>>>>>>> develop
                 </div>
                 </Grid.Column>
                 <Grid.Column id="List" width={13}>

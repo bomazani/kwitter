@@ -21,6 +21,7 @@ class UserSettings extends Component {
             <div>
                 <Form>
         <Form.Group widths='equal'>
+<<<<<<< HEAD
           <Form.Input fluid label='First name' placeholder='First name' />
           <Form.Input fluid label='Last name' placeholder='Last name' />
           <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
@@ -49,6 +50,13 @@ class UserSettings extends Component {
         <Form.TextArea label='About' placeholder='Tell us more about you...' />
         <Form.Checkbox label='I agree to the Terms and Conditions' />
         <Form.Button>Update</Form.Button>
+=======
+          <Form.Input fluid label='Change Display Name' placeholder='New Display Name' />
+          <Form.Input fluid label='Change Password' placeholder='New Password' />
+        </Form.Group>
+        <Form.TextArea label='About' placeholder='Tell us more about you...' />
+        <Form.Button>Submit</Form.Button>
+>>>>>>> develop
       </Form>
       <br/>
       <div>
