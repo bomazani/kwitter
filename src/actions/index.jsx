@@ -33,13 +33,18 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
             .then(res => {
                 dispatch( { type: GET_USER, user: res.data.user } )
             })
-
+            // Call getMessages
     } ).then( () => {
-            // Get messages and save to state
-            Axios.get( 'https://kwitter-api.herokuapp.com/messages' ).then(res => {
-                dispatch( { type: GET_MESSAGES, messages: res.data.messages } )
-            })
+        dispatch(getMessages())
     } )
+}
+
+export const getMessages = (limit = 100) => dispatch =>{
+                // Get messages and save to state
+                Axios.get( 'https://kwitter-api.herokuapp.com/messages?limit=' + limit ).then(res => {
+                    dispatch( { type: GET_MESSAGES, messages: res.data.messages } )
+                })
+    
 }
 
 export const logoutUser = () => dispatch => {
