@@ -21,42 +21,11 @@ class UserSettings extends Component {
             <div>
                 <Form>
         <Form.Group widths='equal'>
-<<<<<<< HEAD
-          <Form.Input fluid label='First name' placeholder='First name' />
-          <Form.Input fluid label='Last name' placeholder='Last name' />
-          <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
-        </Form.Group>
-        <Form.Group inline>
-          <label>Who see your Profile:</label>
-          <Form.Radio
-            label='You'
-            value='Yo'
-            checked={value === 'Yo'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Friends'
-            value='Fr'
-            checked={value === 'Fr'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Everyone'
-            value='Eo'
-            checked={value === 'Eo'}
-            onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Update</Form.Button>
-=======
           <Form.Input fluid label='Change Display Name' placeholder='New Display Name' />
           <Form.Input fluid label='Change Password' placeholder='New Password' />
         </Form.Group>
         <Form.TextArea label='About' placeholder='Tell us more about you...' />
         <Form.Button>Submit</Form.Button>
->>>>>>> develop
       </Form>
       <br/>
       <div>

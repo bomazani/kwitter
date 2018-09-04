@@ -6,49 +6,12 @@ import "./App.css"
 import { Image, Reveal } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react'
-import { Button } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 
 class UserPage extends Component {
     render() {
         return (
             <div id="Userpage">
-<<<<<<< HEAD
-             <Grid celled>
-                <Grid.Row >
-                 <Grid.Column id="UserPage" width={3} >
-                    <div id="headerImg">
-                    <Reveal animated='move'>
-                    <Reveal.Content visible>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='small' />
-                    </Reveal.Content>
-                    <Reveal.Content hidden>
-                        <Image src='https://react.semantic-ui.com/images/avatar/large/chris.jpg' size='small' />
-                    </Reveal.Content>
-                    </Reveal>
-                    <Container>
-                        <p>
-                    USERNAME:
-                    </p>
-                    <p>LIKES:</p>
-                    <p> MESSAGES:</p>
-                    <p> FRIENDS:</p>
-                        
-                    </Container>
-                    </div>
-                    
-                </Grid.Column>
-              
-               
-                <Grid.Column width={10}>
-                <div id="message">Messages Go Here<MessageList/></div>
-              
-                </Grid.Column>
-                </Grid.Row>
-                <Grid.Row >
-                <Grid.Column width={3}>
-                <div>
-                 <Button negative>Logout</Button>
-=======
                 <div id="headerImg">
                 <Reveal animated='move'>
                 <Reveal.Content visible>
@@ -73,9 +36,8 @@ class UserPage extends Component {
                 Name
                 </Header>
                 <MessageList />
->>>>>>> develop
                 </div>
-                </Grid.Column>
+               
                 <Grid.Column id="List" width={13}>
                   
                     <Feed>
@@ -181,9 +143,8 @@ class UserPage extends Component {
     </Feed>
        
                 </Grid.Column>
-               </Grid.Row>
-                </Grid>
-                </div>
+            </div> 
+            </div>
         )
     }
 }
