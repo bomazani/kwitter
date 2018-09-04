@@ -64,6 +64,7 @@ class App extends Component {
               </Segment>
             </Grid.Column>
             <Grid.Column>
+              
             </Grid.Column>
           </Grid.Row>
           <Grid.Row columns={3}>

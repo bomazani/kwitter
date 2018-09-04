@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 const options = [
     { key: 'm', text: 'Male', value: 'male' },
     { key: 'f', text: 'Female', value: 'female' },
   ]
-
+const value = [
+  {key: 'Yo', text: 'You', value:'You'},
+  {key: 'Fr', text: 'Friends', value:"Friends"},
+  {key:'Eo', text:'Everyone', value:'Everyone'}
+]
 
 class UserSettings extends Component {
     state = {}
@@ -22,6 +27,10 @@ class UserSettings extends Component {
         <Form.TextArea label='About' placeholder='Tell us more about you...' />
         <Form.Button>Submit</Form.Button>
       </Form>
+      <br/>
+      <div>
+                 <Button negative>Logout</Button>
+                </div>
             </div>
         )
     }
