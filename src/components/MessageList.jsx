@@ -3,6 +3,7 @@ import { Input, Button, Form } from 'semantic-ui-react';
 import Message from './message.jsx';
 import { connect } from 'react-redux';
 import { postMessageText } from '../actions'
+import './App.css'
 
 class MessageList extends Component {
     state = {
@@ -29,13 +30,15 @@ class MessageList extends Component {
     render() {
         return (
           <React.Fragment>
-              <Form onSubmit={ () => this.props.postMessageText( this.state.message ) }>
-                  <Input value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
-                  <Button inverted color='#0098dc'>Submit</Button>
+              <div id="messagecontainer">
+              <Form  onSubmit={ () => this.props.postMessageText( this.state.message ) }>
+                  <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
+                  <Button >Submit</Button>
                 </Form>
                 <ul>
                   { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id } username={ this.getPostUsername( this.props.userList, message.userId )  } message={ message.text } numLikes={ message.likes.length } /> ) }
                 </ul>
+                </div>
             </React.Fragment>
         );
     }

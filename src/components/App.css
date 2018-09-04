@@ -2,6 +2,7 @@
   text-align: center;
   background-image: url('../images/Kwitter Background.jpeg');
   font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 #Lemur {
   height: 385px;
@@ -23,8 +24,17 @@
   
   border-radius: 25px;
 }
-#logincolor {
+#messagecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background:#0098d3;
+
+}
+#inputmessage {
+  height: 150px;
+  width: 500px;
+  margin-top: 5px;
 }
 #regform {
   position: relative;
@@ -34,9 +44,12 @@
   background: lightblue;
   height: 50%;
 }
-#List {
-  
-width:25%;
+#message {
+  background: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 5px;
+
 }
 #headerImg {
   height: 100%;
@@ -49,10 +62,10 @@ width:25%;
   margin-left: 5px;
 }
 #Userpage {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width:100vh;
+  position: relative;
+  left: 14%;
+  
+  width:76%;
   background: #0098d3;
   
 }
