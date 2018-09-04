@@ -37,7 +37,7 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
     } ).then( () => {
             // Get messages and save to state
             Axios.get( 'https://kwitter-api.herokuapp.com/messages' ).then(res => {
-                dispatch( {type: GET_MESSAGES, messages: res.data.messages} )
+                dispatch( { type: GET_MESSAGES, messages: res.data.messages } )
             })
     } )
 }
@@ -58,12 +58,12 @@ export const registerUser = (username, displayName, password) => dispatch => {
     })
 }
 
-export const postMessageText = ( text ) => ( dispatch, getState ) => {
+export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
     Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
     Axios.post( 'https://kwitter-api.herokuapp.com/messages',{
       text: text
     } ).then( ( res ) => {
-      dispatch( { type: POST_MESSAGE, message: text } )
+      dispatch( { type: POST_MESSAGE, message: text, key: key } )
     } )
 }
 
