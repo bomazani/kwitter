@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Comment } from 'semantic-ui-react';
+import './App.css'
 
 class Message extends Component {
 
@@ -8,7 +9,7 @@ class Message extends Component {
     return (
       <Comment.Group>
 
-      <Comment>
+      <Comment id="message">
         <Comment.Content>
           <Comment.Author>
             {this.props.username}

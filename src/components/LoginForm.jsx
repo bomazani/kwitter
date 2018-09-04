@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
         const { session } =  this.props
 
         return (
-            <Segment raised>
+            <Segment raised  id="logincolor">
             <Grid columns='equal'>
                <Grid.Column></Grid.Column>
                <Grid.Column>
@@ -34,8 +34,8 @@ class LoginForm extends React.Component {
                         <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                         <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                     </Form.Field>
-                    <Button inverted color='white' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
-                    { session.isLoggedIn && <Button inverted color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
+                    <Button color='#0098d3' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
+                    { session.isLoggedIn && <Button  type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
                 </Form>
               </Grid.Column>
               <Grid.Column></Grid.Column>
