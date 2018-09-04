@@ -78,3 +78,8 @@
   margin:10px;
 }
 
+#refresh {
+  display: absolute;
+  top: 50px;
+  left: 50px;
+}
