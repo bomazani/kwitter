@@ -12,6 +12,11 @@ class MessageList extends Component {
         loaded: false
     }
 
+    onHandleSubmit = (e) => {
+        this.props.postMessageText( this.state.message );
+        this.setState( { message: ''});
+    }
+
     updateMessage = (e) => {
         this.setState({
           message: e.target.value,
@@ -31,7 +36,7 @@ class MessageList extends Component {
         return (
           <React.Fragment>
               <div id="messagecontainer">
-              <Form  onSubmit={ () => this.props.postMessageText( this.state.message ) }>
+              <Form  onSubmit={ this.onHandleSubmit }>
                   <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
                   <Button >Submit</Button>
                 </Form>
