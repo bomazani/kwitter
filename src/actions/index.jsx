@@ -7,6 +7,7 @@ export const GET_USER = 'GET_USER';
 export const GET_USERS_LIST = 'GET_USERS_LIST';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
+export const VIEW_PROFILE = 'VIEW_PROFILE';
 
 export const loginUser = ( username, password ) => (dispatch, getState) => {
     console.log("username", username)
@@ -65,6 +66,10 @@ export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
     } ).then( ( res ) => {
       dispatch( { type: POST_MESSAGE, message: text, key: key } )
     } )
+}
+
+export const viewProfile = () => (dispatch) => {
+    
 }
 
 export const logError = ( err ) => dispatch => {
