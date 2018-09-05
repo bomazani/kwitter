@@ -20,7 +20,7 @@ class MessageList extends Component {
     }
 
     getPostUsername = ( users, id ) => {
-        return users.find( user => user.id === id ).displayName
+        return users.find( postUser => postUser.id === id ).displayName
     }
 
     componentDidMount = () => {
@@ -37,6 +37,7 @@ class MessageList extends Component {
                 </Form>
                 <ul>
                   { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id }
+                                                                id={message.userId}
                                                                 username={ this.getPostUsername( this.props.userList, message.userId ) } 
                                                                 message={ message.text } 
                                                                 numLikes={ message.likes.length }/> ) }

@@ -73,8 +73,10 @@ export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
     } )
 }
 
-export const viewProfile = () => (dispatch) => {
-    
+export const viewProfile = (id) => (dispatch) => {
+    Axios.get( 'https://kwitter-api.herokuapp.com/users/' + id ).then(res => {
+        dispatch({ type: VIEW_PROFILE, profileInfo: res.data.user })
+    })
 }
 
 export const logError = ( err ) => dispatch => {
