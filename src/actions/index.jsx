@@ -40,7 +40,7 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
     } )
 }
 
-export const getMessages = (limit = 100) => dispatch =>{
+export const getMessages = (limit = 1000) => dispatch =>{
                 // Get messages and save to state
                 Axios.get( 'https://kwitter-api.herokuapp.com/messages?limit=' + limit ).then(res => {
                     dispatch( { type: GET_MESSAGES, messages: res.data.messages } )
@@ -70,6 +70,7 @@ export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
       text: text
     } ).then( ( res ) => {
       dispatch( { type: POST_MESSAGE, message: text, key: key } )
+      dispatch( getMessages())
     } )
 }
 
