@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import './App.css';
 
 class ProfileCard extends Component {
-    render() { 
+    render() {
     return (
         <div class="ui card">
             <div class="image">
-                <img src=""></img>
+                <img alt="" src=""></img>
             </div>
             <div class="content">
                 <a class="header">{ this.props.clickedProfileInfo.username }</a>

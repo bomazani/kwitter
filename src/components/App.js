@@ -10,7 +10,7 @@ import MessageList from './MessageList.jsx';
 import UserLoginScreen from './user-login-screen.jsx';
 import Header from './Header.jsx';
 import UserSettings from './UserSettings.jsx';
-import UserPage from "./UserPage.jsx";
+// import UserPage from "./UserPage.jsx";
 import RefreshButton from './RefreshButton.jsx';
 import ProfileCard from './ProfileCard.jsx'
 
@@ -24,7 +24,7 @@ class App extends Component {
         <RefreshButton/>
         {this.props.profileHasBeenClicked && <ProfileCard />}
         <Grid columns='equal'>
-        <Grid.Row columns={3}>
+          <Grid.Row columns={3}>
             <Grid.Column>
             </Grid.Column>
             <Grid.Column>
@@ -46,7 +46,6 @@ class App extends Component {
             <Grid.Column>
             </Grid.Column>
           </Grid.Row>
-          
           <Grid.Row columns={3}>
             <Grid.Column>
             </Grid.Column>
@@ -67,7 +66,6 @@ class App extends Component {
               </Segment>
             </Grid.Column>
             <Grid.Column>
-              
             </Grid.Column>
           </Grid.Row>
           <Grid.Row columns={3}>
