@@ -40,8 +40,7 @@ class RegistrationForm extends Component {
                 <Input  placeholder='Username' onChange={this.updateUsername}/>
                 <Input  placeholder='Display Name' onChange={this.updateDisplay}/>
                 <Input  placeholder='Password' type='password' onChange={this.updatePassword}/>
-              
-          <Button id="regform" color='#0098d3' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
+                <Button id="regform" color='teal' type='submit' onClick={ () => this.props.registerUser(this.state.username, this.state.displayName, this.state.password) }>submit</Button>
               </Grid.Column>
               <Grid.Column></Grid.Column>
             </Grid>
