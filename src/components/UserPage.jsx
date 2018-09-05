@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Message from './message.jsx';
 
 import MessageList from "./MessageList";
 import "./App.css"
@@ -11,7 +10,7 @@ import { Header } from 'semantic-ui-react'
 class UserPage extends Component {
     render() {
         return (
-            
+
             <Grid id="Userpage" celled>
                 <Grid.Row>
                 <Grid.Column width={3}>
@@ -29,7 +28,7 @@ class UserPage extends Component {
                   USERNAME:
                   </p>
                   <p>LIKES:</p>
-                 <p> MESSAGES:</p>                    
+                 <p> MESSAGES:</p>
                 </Container>
                 </div>
                 </Grid.Column>
@@ -37,7 +36,7 @@ class UserPage extends Component {
                 <div id="message">Messages Go Here<MessageList/></div>
                 </Grid.Column>
                 </Grid.Row>
-                
+
                 <Grid.Row>
                     <Grid.Column width={3}>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
@@ -47,25 +46,25 @@ class UserPage extends Component {
                 <Header as='h5' attached='top'>
                 Name
                 </Header>
-                
+
                 </div>
-               
+
                 <Grid.Column id="List" width={13}>
                   <MessageList/>
-                   
-       
+
+
                 </Grid.Column>
                     </Grid.Column>
-                   
-                    
-               
-                 
+
+
+
+
                     </Grid.Row>
                 </Grid>
-               
-                
-           
-           
+
+
+
+
         )
     }
 }
