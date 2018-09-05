@@ -7,6 +7,7 @@ export const GET_USER = 'GET_USER';
 export const GET_USERS_LIST = 'GET_USERS_LIST';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
+export const VIEW_PROFILE = 'VIEW_PROFILE';
 
 export const loginUser = ( username, password ) => (dispatch, getState) => {
     console.log("username", username)
@@ -71,6 +72,12 @@ export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
       dispatch( { type: POST_MESSAGE, message: text, key: key } )
       dispatch( getMessages())
     } )
+}
+
+export const viewProfile = (id) => (dispatch) => {
+    Axios.get( 'https://kwitter-api.herokuapp.com/users/' + id ).then(res => {
+        dispatch({ type: VIEW_PROFILE, profileInfo: res.data.user })
+    })
 }
 
 export const logError = ( err ) => dispatch => {

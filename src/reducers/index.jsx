@@ -1,6 +1,6 @@
-import { LOGIN_USER, LOG_ERROR, REGISTER_USER, GET_MESSAGES, POST_MESSAGE, LOGOUT_USER, GET_USER, GET_USERS_LIST } from "../actions";
+import { LOGIN_USER, LOG_ERROR, REGISTER_USER, GET_MESSAGES, POST_MESSAGE, LOGOUT_USER, GET_USER, GET_USERS_LIST, VIEW_PROFILE } from "../actions";
 
-const initialState = { session: {}, user: {}, messages: [], userList: [] }
+const initialState = { session: {}, user: {}, messages: [], userList: [], clickedProfileInfo: {}, profileHasBeenClicked: false }
 
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -52,6 +52,12 @@ export default (state = initialState, action) => {
           return {
             ...state,
             errors: [ ...state.errors, action.error ]
+          }
+        case VIEW_PROFILE:
+          return {
+              ...state,
+              clickedProfileInfo: action.profileInfo,
+              profileHasBeenClicked: true
           }
         default:
             return state
