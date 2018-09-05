@@ -11,7 +11,7 @@ import UserLoginScreen from './user-login-screen';
 import Header from './Header.jsx';
 import UserSettings from './UserSettings.jsx';
 import UserPage from "./UserPage.jsx";
-
+import RefreshButton from './RefreshButton'
 
 // static files
 import './App.css';
@@ -20,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <RefreshButton/>
         <Grid columns='equal'>
         <Grid.Row columns={3}>
             <Grid.Column>
