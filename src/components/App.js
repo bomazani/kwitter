@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Segment } from 'semantic-ui-react';
+import { Link, Route } from 'react-router-dom';
 
 // Components
 import MessageList from './MessageList.jsx';
@@ -24,64 +25,29 @@ class App extends Component {
         <RefreshButton/>
         {this.props.profileHasBeenClicked && <ProfileCard />}
         <Grid columns='equal'>
+          <Segment>
+            <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+            <div><Link to='/settings/'>User Settings</Link></div>
+          </Segment>
           <Grid.Row columns={3}>
+            <Grid.Column/>
             <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
+
               <Segment>
                 <Header />
               </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
+
               <Segment>
-                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+                <Route exact path='/' component={ UserLoginScreen } />
+                <Route exact path='/messages' component={ MessageList } />
+                <Route exact path='/settings/' component={ UserSettings } />
               </Segment>
+
             </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <UserLoginScreen />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <MessageList messages={ [] } />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <UserSettings/>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
+            <Grid.Column/>
           </Grid.Row>
         </Grid>
-
-        </div>
+      </div>
     );
   }
 }
