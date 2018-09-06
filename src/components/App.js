@@ -24,42 +24,50 @@ class App extends Component {
     return (
       <container className="App">
         <container className='FlexContainer'>
-          <container className='InnerContainer'>
-            <div className='RefButton'>
-              <RefreshButton/>
-              {this.props.profileHasBeenClicked && <ProfileCard />}
+          <container className='TitleContainer'>
+            <div className='LeftTitle'>LEFT</div>
+            <div className='CenterTitle'>
+              <Header/>
             </div>
-            <div className='LogoutButton'><LogoutButton/></div>
-        
-              <div className='Heading'>  
-                
-                  <Header/>
-                
+            <div className='RightTitle'>
+              <div className='LogoutButton'>
+                <LogoutButton/>
               </div>
+            </div>
+          </container>
+          <container className='InnerContainer'>
+            <div className='Heading'>  
+              <div className='RefreshButton'>
+                <RefreshButton/>
+                {this.props.profileHasBeenClicked && <ProfileCard />}
+              </div>
+              
+              
+            </div> 
+              
+            <div className='Hello'>            
+              <div>
+                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+              </div>
+            </div>
 
-              <div className='Hello'>            
-                <div>
-                  <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
-                </div>
-              </div>
+            <div className='Login'>
+              <Segment>
+                <UserLoginScreen />
+              </Segment>    
+            </div>
 
-              <div className='Login'>
-                <Segment>
-                  <UserLoginScreen />
-                </Segment>    
-              </div>
+            <div className='Messages'>
+              <Segment>
+                <MessageList messages={ this.props.messageArray } />
+              </Segment>
+            </div>
 
-              <div className='Messages'>
-                <Segment>
-                  <MessageList messages={ this.props.messageArray } />
-                </Segment>
-              </div>
-
-              <div className='UserSettings'>
-                <Segment>
-                  <UserSettings/>
-                </Segment>
-              </div>
+            <div className='UserSettings'>
+              <Segment>
+                <UserSettings/>
+              </Segment>
+            </div>
           </container>
         </container>
       </container>
