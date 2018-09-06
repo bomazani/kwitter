@@ -22,7 +22,7 @@ class Message extends Component {
 
 	render() {
 		return (
-			<Comment id="message">
+			<Comment className="message">
 				<Comment.Content>
 				  <Comment.Avatar src='../images/KwitterBackground.jpg' />
 					<Comment.Author onClick={ () => this.props.viewProfile( this.props.message.userId ) }>
