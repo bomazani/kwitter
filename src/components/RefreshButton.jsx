@@ -6,10 +6,10 @@ import { getMessages } from '../actions';
 import './App.css';
 
 
-class RefreshButton extends Component { 
-    render (){ 
+class RefreshButton extends Component {
+    render (){
         return (
-            <div id='refresh'>
+            <div id='refresh' class='refresh' className='refresh' >
                 <Button onClick={() => this.props.getMessages()}>Refresh Messages</Button>
             </div>
         )}
@@ -20,5 +20,5 @@ const mapDispatchToProps = ( dispatch ) => {
       getMessages: () => dispatch( getMessages(200) )
     }
   }
-  
+
 export default connect( undefined, mapDispatchToProps )( RefreshButton );

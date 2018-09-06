@@ -7,7 +7,11 @@ export const GET_USER = 'GET_USER';
 export const GET_USERS_LIST = 'GET_USERS_LIST';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
+export const POST_LIKE = 'POST_LIKE'
+export const DELETE_LIKE = 'DELETE_LIKE'
 export const VIEW_PROFILE = 'VIEW_PROFILE';
+
+const API_URL = 'https://kwitter-api.herokuapp.com/';
 
 export const loginUser = ( username, password ) => (dispatch, getState) => {
     console.log("username", username)
@@ -45,7 +49,6 @@ export const getMessages = (limit = 1000) => dispatch =>{
                 Axios.get( 'https://kwitter-api.herokuapp.com/messages?limit=' + limit ).then(res => {
                     dispatch( { type: GET_MESSAGES, messages: res.data.messages } )
                 })
-    
 }
 
 export const logoutUser = () => dispatch => {
@@ -74,7 +77,7 @@ export const postMessageText = ( text, key ) => ( dispatch, getState ) => {
     } )
 }
 
-export const viewProfile = (id) => (dispatch) => {
+export const viewProfile = id => dispatch => {
     Axios.get( 'https://kwitter-api.herokuapp.com/users/' + id ).then(res => {
         dispatch({ type: VIEW_PROFILE, profileInfo: res.data.user })
     })
@@ -82,4 +85,30 @@ export const viewProfile = (id) => (dispatch) => {
 
 export const logError = ( err ) => dispatch => {
     dispatch( { type: LOG_ERROR, error: err } )
+}
+
+export const postLike = id => ( dispatch, getState ) => {
+  // set the auth token
+  Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
+
+  // post request
+  Axios.post( API_URL + '/likes',
+    { userId: getState().user.id, messageId: id } ).then( res => {
+      dispatch( { type: POST_LIKE, data: res.data } )
+      dispatch( getMessages( getState().session.messageLimit ) )
+			console.log( res.data )
+    } )
+
+}
+
+export const deleteLike = id => ( dispatch, getState ) => {
+
+  Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
+  Axios.post( API_URL + '/likes/' + id ).then( res => {
+		dispatch( { type: DELETE_LIKE, data: res.data } )
+		console.log( res.data )
+	} )
+
+  dispatch( getMessages( getState().session.messageLimit ) )
+
 }

@@ -1,60 +1,71 @@
 import React, { Component } from 'react';
-import { Input, Button, Form } from 'semantic-ui-react';
+import { Comment, Input, Button, Form } from 'semantic-ui-react';
 import Message from './message.jsx';
 import { connect } from 'react-redux';
 import { postMessageText } from '../actions'
 import './App.css'
 
 class MessageList extends Component {
-    state = {
-        message: '',
-        users: [],
-        loaded: false
-    }
+  state = {
+    message: '',
+    users: [],
+    loaded: false
+  }
 
-    onHandleSubmit = (e) => {
-        this.props.postMessageText( this.state.message );
-        this.setState( { message: ''});
-    }
+  onHandleSubmit = (e) => {
+    this.props.postMessageText( this.state.message );
+    this.setState( { message: ''});
+  }
 
+<<<<<<< HEAD
     updateMessage = (e) => {
         this.setState({
           message: e.target.value,
         })
     }
+=======
+  updateMessage = (e) => {
+    this.setState({
+      message: e.target.value,
 
-    getPostUsername = ( users, id ) => {
-        return users.find( postUser => postUser.id === id ).displayName
-    }
+    })
+  }
+>>>>>>> develop
 
-    componentDidMount = () => {
-      this.setState( { loaded: true } )
-    }
+  getPostUsername = ( users, id ) => {
+    return users.find( postUser => postUser.id === id ).displayName
+  }
 
-    render() {
-        return (
-          <React.Fragment>
-              <div id="messagecontainer">
-              <Form  onSubmit={ this.onHandleSubmit }>
-                  <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
-                  <Button >Submit</Button>
-                </Form>
-                <ul>
-                  { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id }
-                                                                id={message.userId}
-                                                                username={ this.getPostUsername( this.props.userList, message.userId ) } 
-                                                                message={ message.text } 
-                                                                numLikes={ message.likes.length }/> ) }
-                </ul>
-                </div>
-            </React.Fragment>
-        );
-    }
+  componentDidMount = () => {
+    this.setState( { loaded: true } )
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div id="messagecontainer">
+          <Form  onSubmit={ this.onHandleSubmit }>
+            <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
+            <Button >Submit</Button>
+          </Form>
+          <Comment.Group>
+            { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id }
+              userId={message.userId}
+              username={ this.getPostUsername( this.props.userList, message.userId ) }
+              message={ message }
+              numLikes={ message.likes.length }
+							userLike={ message.likes.find( like => like.userId === this.props.userId ) } /> ) }
+          </Comment.Group>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 const mapStatetoProps = state => ({
-    messageList: state.messages,
-    userList: state.userList
+  messageList: state.messages,
+  userList: state.userList,
+	userId: state.user.id
 })
 
 const mapDispatchToProps = ( dispatch ) => {
