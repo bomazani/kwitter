@@ -139,6 +139,10 @@
   margin: 5px;
 }
 
+.usernameTest {
+  color: orange;
+  font-size: 10em;
+}
 /* #headerImg {
   height: 100%;
  text-align: left;

@@ -17,12 +17,11 @@ class MessageList extends Component {
     this.setState( { message: ''});
   }
 
-  updateMessage = (e) => {
-    this.setState({
-      message: e.target.value,
-
-    })
-  }
+    updateMessage = (e) => {
+        this.setState({
+          message: e.target.value,
+        })
+    }
 
   getPostUsername = ( users, id ) => {
     return users.find( postUser => postUser.id === id ).displayName

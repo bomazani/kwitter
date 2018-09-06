@@ -24,10 +24,10 @@ class Message extends Component {
 	render() {
 		return (
 			<Comment>
-				<Comment.Avatar src={profileImg} />
 				<Comment.Content>
-					<Comment.Author onClick={ () => this.props.viewProfile( this.props.messgae.userId ) }>
-						{ this.props.message.username }
+				 <Comment.Avatar src={profileImg} />
+					<Comment.Author onClick={ () => this.props.viewProfile( this.props.message.userId ) }>
+						{ this.props.username }
 					</Comment.Author>
 					<Comment.Text>
 						{ this.props.message.text }
