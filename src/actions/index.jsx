@@ -54,6 +54,7 @@ export const getMessages = (limit = 1000) => dispatch =>{
 export const logoutUser = () => dispatch => {
 
     dispatch( { type: LOGOUT_USER } )
+    dispatch( push('/'))
 }
 
 export const registerUser = (username, displayName, password) => dispatch => {
