@@ -49,7 +49,7 @@ class App extends Component {
 
               <div className='Messages'>
                 <Segment>
-                  <MessageList messages={ [] } />
+                  <MessageList messages={ this.props.messageArray } />
                 </Segment>
               </div>
 
@@ -66,6 +66,7 @@ class App extends Component {
 }
 
 const mapStatetoProps = state => ({
+  messageArray: state.messages,
   loginuser: state.session.username,
   profileHasBeenClicked: state.profileHasBeenClicked
 })
