@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Comment } from 'semantic-ui-react';
-import { viewProfile, deleteLike, postLike } from '../actions'
-import './App.css'
+import { viewProfile, deleteLike, postLike } from '../actions';
+import './App.css';
 
 class Message extends Component {
 

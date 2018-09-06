@@ -1,19 +1,20 @@
 .App {
   text-align: center;
-  background-image: url('../images/Kwitter_Background.jpg');
+  background-image: url('../images/Lemur_icon.png');
   font-family: 'Roboto', sans-serif;
   max-height: 100vh;
 }
 
 /* CSS for App.js */
 .FlexContainer {
-  /* background-color: rgb(172, 232, 252); */
   background-image: url('../images/Kwitter_Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 100vh;
+  
 }
 
 .InnerContainer {
@@ -52,6 +53,23 @@
 /* End CSS for App.js */
 
 
+/* Start CSS for user-login-screen */
+.LoginRegister {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.LoginForm {
+
+}
+
+.RegisterForm {
+
+}
+/* End CSS for user-login-screen */
+
+
 #Lemur {
   /* height: 385px; */
   width: 100%;
@@ -80,7 +98,7 @@
 
 #messagecontainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 10px;
   align-items: center;
@@ -154,4 +172,8 @@
   display: absolute;
   top: 50px;
   left: 50px;
+}
+
+.column {
+  background: #0098d3;
 }

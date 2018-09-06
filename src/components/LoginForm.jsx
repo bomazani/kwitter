@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
                             <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                             <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                         </Form.Field>
-                        <Button color='blue' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
+                        <Button color='yellow' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
                         { session.isLoggedIn && <Button color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
                     </Form>
                 </Grid.Column>
