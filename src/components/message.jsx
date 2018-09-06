@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Comment } from 'semantic-ui-react';
 import { viewProfile, deleteLike, postLike } from '../actions';
+import profileImg from '../images/Lemur_icon.png';
 import './App.css';
 
 class Message extends Component {
@@ -24,7 +25,7 @@ class Message extends Component {
 		return (
 			<Comment className="message">
 				<Comment.Content>
-				  <Comment.Avatar src='../images/KwitterBackground.jpg' />
+				 <Comment.Avatar src={profileImg} />
 					<Comment.Author onClick={ () => this.props.viewProfile( this.props.message.userId ) }>
 						{ this.props.username }
 					</Comment.Author>

@@ -180,3 +180,51 @@
 .column {
   background: #0098d3;
 }
+
+.profile-wrap {
+  z-index: 1;
+  position: fixed;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.exit-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.info-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-btn {
+  display: flex;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30%;
+  background-color: red;
+  color: rgb(233, 233, 233);
+}
+
+.profile-card {
+  height: 60%;
+}
+
+.content-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}

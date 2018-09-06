@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Segment } from 'semantic-ui-react';
+import { Icon, Segment } from 'semantic-ui-react';
 import { Link, Route } from 'react-router-dom';
 
 // Components
@@ -13,7 +13,8 @@ import Header from './Header.jsx';
 import UserSettings from './UserSettings.jsx';
 // import UserPage from "./UserPage.jsx";
 import RefreshButton from './RefreshButton.jsx';
-import ProfileCard from './ProfileCard.jsx'
+import ProfileCard from './ProfileCard.jsx';
+import { exitView } from '../actions';
 
 // static files
 import './App.css';
@@ -24,10 +25,13 @@ class App extends Component {
       <container className="App">
         <container className='FlexContainer'>
           <container className='InnerContainer'>
-            <div className='RefButton'>
-              <RefreshButton/>
-              {this.props.profileHasBeenClicked && <ProfileCard />}
-            </div>
+                {this.props.profileHasBeenClicked && <div className="profile-wrap">
+                                                        <div className="exit-wrap"><div className="exit-btn" onClick={ () => this.props.exitView() }>X</div></div>
+                                                        <div className="info-wrap"><ProfileCard /></div>
+                                                      </div>}
+              <div className='RefButton'>
+                <RefreshButton/>
+              </div>
         
               <div className='Heading'>  
                 
@@ -71,4 +75,10 @@ const mapStatetoProps = state => ({
   profileHasBeenClicked: state.profileHasBeenClicked
 })
 
-export default connect(mapStatetoProps, undefined)(App);
+const mapDispatchToProps = ( dispatch ) => {
+  return {
+    exitView: () => dispatch( exitView() )
+  }
+}
+
+export default connect(mapStatetoProps, mapDispatchToProps)(App);
