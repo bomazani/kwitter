@@ -5,7 +5,7 @@ import RegistrationForm from './RegistrationForm';
 class UserLoginScreen extends React.Component {
     render() {
       return (
-        <React.Fragment>
+        <div className='Login'>
           <container className="LoginRegister">
             <div className="LoginForm">
               <p>Login Form</p>
@@ -17,8 +17,8 @@ class UserLoginScreen extends React.Component {
               {/* <div id="mainpage"></div> */}
               <RegistrationForm />
             </div>
-          </container>  
-        </React.Fragment> )
+          </container>
+          </div> )
     }
 }
 

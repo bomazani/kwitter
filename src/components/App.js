@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Icon, Segment } from 'semantic-ui-react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 // Components
 import MessageList from './MessageList.jsx';
@@ -32,36 +32,24 @@ class App extends Component {
               <div className='RefButton'>
                 <RefreshButton/>
               </div>
-        
-              <div className='Heading'>  
-                
+              <div className='Heading'>
                   <Header/>
-                
               </div>
 
-              <div className='Hello'>            
+              <div className='Hello'>
                 <div>
                   <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
                 </div>
               </div>
 
-              <div className='Login'>
-                <Segment>
-                  <UserLoginScreen />
-                </Segment>    
-              </div>
+              <Segment>
+                <Switch>
+                  <Route exact path='/' render={() => (<UserLoginScreen/>) } />
+                  <Route path='/messages' render={() => ( <MessageList/> ) } />
+                  <Route path='/settings' render={() => (<UserSettings/>) } />
+                </Switch>
+              </Segment>
 
-              <div className='Messages'>
-                <Segment>
-                  <MessageList messages={ this.props.messageArray } />
-                </Segment>
-              </div>
-
-              <div className='UserSettings'>
-                <Segment>
-                  <UserSettings/>
-                </Segment>
-              </div>
           </container>
         </container>
       </container>

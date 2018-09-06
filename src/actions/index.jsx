@@ -1,4 +1,6 @@
 import Axios from 'axios';
+import { push } from 'connected-react-router';
+
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOG_ERROR = 'LOGIN_ERROR';
 export const LOGOUT_USER = 'LOGOUT_USER';
@@ -41,7 +43,9 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
             })
             // Call getMessages
     } ).then( () => {
-        dispatch(getMessages())
+        dispatch( push( '/messages' ) )
+    } ).then( () => {
+        dispatch( getMessages() )
     } )
 }
 
