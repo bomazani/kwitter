@@ -14,27 +14,6 @@ class Message extends Component {
 			postLike( this.props.message.id )
 		}
 
-<<<<<<< HEAD
-  render() {
-    return (
-      <Comment.Group>
-      <Comment id="message">
-        <Comment.Content>
-          <Comment.Author onClick={ () => this.props.viewProfile(this.props.id) }>
-            {this.props.username}
-          </Comment.Author>
-          <Comment.Text>
-            {this.props.message}
-          </Comment.Text>
-          <Comment.Actions>
-            <Icon color='red' name='heart' /> {this.props.numLikes}
-          </Comment.Actions>
-        </Comment.Content>
-      </Comment>
-      </Comment.Group>
-    )
-  }
-=======
 	}
 
 	delete = ( e ) => {
@@ -60,7 +39,6 @@ class Message extends Component {
 			</Comment>
 		)
 	}
->>>>>>> develop
 }
 
 const mapDispatchtoProps = dispatch => {
