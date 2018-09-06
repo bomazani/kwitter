@@ -13,6 +13,7 @@ import UserSettings from './UserSettings.jsx';
 // import UserPage from "./UserPage.jsx";
 import RefreshButton from './RefreshButton.jsx';
 import ProfileCard from './ProfileCard.jsx'
+import UserPage from './UserPage.jsx';
 
 // static files
 import './App.css';
@@ -80,6 +81,7 @@ class App extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <UserPage/>
 
         </div>
     );

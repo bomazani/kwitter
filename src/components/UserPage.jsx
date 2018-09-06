@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
+import { Input, Menu } from 'semantic-ui-react'
 import MessageList from "./MessageList";
 import "./App.css"
-import { Image, Reveal } from 'semantic-ui-react'
-import { Container } from 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react'
-import { Header } from 'semantic-ui-react'
+import { Header , Button } from 'semantic-ui-react'
+import UserSettings from './UserSettings';
+import RefreshButton from './RefreshButton.jsx';
+import KA from '../images/KA.png'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 class UserPage extends Component {
     render() {
@@ -15,31 +17,54 @@ class UserPage extends Component {
                 <Grid.Row>
                 <Grid.Column width={3}>
                 <div id="headerImg">
-                <Reveal animated='move'>
-                <Reveal.Content visible>
-                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='small' />
-                </Reveal.Content>
-                <Reveal.Content hidden>
-                    <Image src='https://react.semantic-ui.com/images/avatar/large/chris.jpg' size='small' />
-                </Reveal.Content>
-                </Reveal>
-                <Container>
-                    <p>
-                  USERNAME:
-                  </p>
-                  <p>LIKES:</p>
-                 <p> MESSAGES:</p>
-                </Container>
+                <Card>
+                    <Image src={KA} />
+                    <Card.Content>
+                    <Card.Header>Matthew</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>Joined in 2015</span>
+                    </Card.Meta>
+                    <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                    <a>
+                        <Icon name='user' />
+                        22 Friends
+                    </a>
+                    </Card.Content>
+                </Card>
                 </div>
                 </Grid.Column>
                 <Grid.Column width={13}>
-                <div id="message">Messages Go Here<MessageList/></div>
+                <div id="NavBar">  <Menu secondary>
+                        <Menu.Item name='home' active={UserPage === 'home'} onClick={this.handleItemClick} />
+                        <Menu.Item
+                        name='messages'
+                        active={UserSettings === 'messages'}
+                        onClick={this.handleItemClick}
+                        />
+                        <Menu.Item
+                        name='friends'
+                        active={MessageList === 'friends'}
+                        onClick={this.handleItemClick}
+                        />
+                        <Menu.Menu position='right'>
+                        <Menu.Item>
+                            <Input id="navbarinput" icon='search' placeholder='Search...' />
+                        </Menu.Item>
+                        <Menu.Item/>
+                           <Button negative>Logout</Button>
+                        
+                        </Menu.Menu>
+                    </Menu>
+                    <RefreshButton/>
+                    </div>
                 </Grid.Column>
                 </Grid.Row>
 
                 <Grid.Row>
                     <Grid.Column width={3}>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+                        <Image src= {KA} />
                     </Grid.Column>
                     <Grid.Column width={13}>
                         <div class="List"> Message List is here
