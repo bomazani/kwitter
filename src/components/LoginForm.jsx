@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Grid, Segment, Form, Input, Button } from 'semantic-ui-react';
 import { loginUser, logoutUser } from '../actions';
 import { withRouter } from 'react-router-dom';
+import LogoutButton from './LogoutButton';
 
 class LoginForm extends React.Component {
     state = {
@@ -21,7 +22,12 @@ class LoginForm extends React.Component {
             password: e.target.value
         })
     }
-
+// clearForm = (e) => {
+//         this.setState({
+//             username: '',
+//             password: ''
+//         })
+//     }
     render() {
         const { session } =  this.props
 
@@ -36,7 +42,7 @@ class LoginForm extends React.Component {
                             <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
                         </Form.Field>
                         <Button color='yellow' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
-                        { session.isLoggedIn && <Button color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
+                        <LogoutButton/>
                     </Form>
                 </Grid.Column>
                 <Grid.Column></Grid.Column>
@@ -46,9 +52,9 @@ class LoginForm extends React.Component {
     }
 }
 
-const mapStatetoProps = state => ({
-    session: state.session
-})
+// const mapStatetoProps = state => ({
+//     session: state.session
+// })
 
 const mapDispatchtoProps = dispatch => {
     return {
@@ -57,4 +63,4 @@ const mapDispatchtoProps = dispatch => {
     }
 }
 
-export default connect( mapStatetoProps, mapDispatchtoProps )( withRouter( LoginForm ) );
+export default connect( undefined, mapDispatchtoProps )( withRouter( LoginForm ) );

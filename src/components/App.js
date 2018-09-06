@@ -14,6 +14,7 @@ import UserSettings from './UserSettings.jsx';
 // import UserPage from "./UserPage.jsx";
 import RefreshButton from './RefreshButton.jsx';
 import ProfileCard from './ProfileCard.jsx'
+import LogoutButton from './LogoutButton.jsx';
 
 // static files
 import './App.css';
@@ -28,6 +29,7 @@ class App extends Component {
               <RefreshButton/>
               {this.props.profileHasBeenClicked && <ProfileCard />}
             </div>
+            <div className='LogoutButton'><LogoutButton/></div>
         
               <div className='Heading'>  
                 
