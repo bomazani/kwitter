@@ -1,72 +1,163 @@
 .App {
   text-align: center;
-  background-image: url('../images/Kwitter Background.jpeg');
+  background-image: url('../images/Lemur_icon.png');
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  max-height: 100vh;
 }
-#Lemur {
-  height: 385px;
+
+/* CSS for App.js */
+.FlexContainer {
+  background-image: url('../images/Kwitter_Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.InnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1500px;
+  height: 800vh;
+}
+
+.Heading {
+  width: 45%;
+  /* max-height: 100vh; */
+  
+}
+
+.Hello {
+  width: 45%;
+  background: rgb(172, 232, 252);
+  margin: 10px;
+}
+
+.Login {
   width: 100%;
 }
-#LemurContainer {
+
+.Messages {
+  width: 100%;
+}
+
+.UserSettings {
+  width:100%;
+
+}
+/* End CSS for App.js */
+
+
+/* Start CSS for user-login-screen */
+.LoginRegister {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.LoginForm {
+
+}
+
+.RegisterForm {
+
+}
+/* End CSS for user-login-screen */
+
+
+#Lemur {
+  /* height: 385px; */
+  width: 100%;
+  max-height: 35vh;
+}
+
+/* #LemurContainer {
   height: 400px;
   border-radius: 25px;
-}
-#header {
+} */
+
+/* #header {
   font-size: 20px;
   margin-bottom: 20px;
-}
+} */
+
 #greeting {
   background: lightblue;
   height: 10%;
 }
+
 #loginform {
   
   border-radius: 25px;
 }
+
 #messagecontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
+  align-items: center;
   background:#0098d3;
-
 }
+
+.MessageForm {
+  display: flex;
+  align-content: center; 
+  flex-direction: column;
+}
+
+.MessageSubmit {
+  width: 80px;
+}
+
 #inputmessage {
   height: 150px;
   width: 500px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  align-content: center;
 }
+
 #regform {
   position: relative;
   top: 10px;
 }
+
 #mainpage {
   background: lightblue;
   height: 50%;
 }
+
 #message {
   background: white;
   border-radius: 10px;
   border: 2px solid black;
   margin: 5px;
-
 }
-#headerImg {
+
+/* #headerImg {
   height: 100%;
  text-align: left;
  border: 2px solid black;
-}
+} */
+
 .container {
   float: right;
   width: 75%;
   margin-left: 5px;
 }
+
 #Userpage {
   position: relative;
   left: 14%;
   width:76%;
   background: #0098d3;
 }
+
 #headline {
   position: relative;
   left: 45%;
@@ -80,4 +171,8 @@
   position: fixed;
   top: 50px;
   left: 50px;
+}
+
+.column {
+  background: #0098d3;
 }

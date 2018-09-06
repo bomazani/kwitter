@@ -21,33 +21,46 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <RefreshButton/>
-        {this.props.profileHasBeenClicked && <ProfileCard />}
-        <Grid columns='equal'>
-          <Segment>
-            <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
-            <div><Link to='/settings/'>User Settings</Link></div>
-          </Segment>
-          <Grid.Row columns={3}>
-            <Grid.Column/>
-            <Grid.Column>
+      <container className="App">
+        <container className='FlexContainer'>
+          <container className='InnerContainer'>
+            <div className='RefButton'>
+              <RefreshButton/>
+              {this.props.profileHasBeenClicked && <ProfileCard />}
+            </div>
+        
+              <div className='Heading'>  
+                
+                  <Header/>
+                
+              </div>
 
-              <Segment>
-                <Header />
-              </Segment>
+              <div className='Hello'>            
+                <div>
+                  <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+                </div>
+              </div>
 
-              <Segment>
-                <Route exact path='/' component={ UserLoginScreen } />
-                <Route exact path='/messages' component={ MessageList } />
-                <Route exact path='/settings/' component={ UserSettings } />
-              </Segment>
+              <div className='Login'>
+                <Segment>
+                  <UserLoginScreen />
+                </Segment>    
+              </div>
 
-            </Grid.Column>
-            <Grid.Column/>
-          </Grid.Row>
-        </Grid>
-      </div>
+              <div className='Messages'>
+                <Segment>
+                  <MessageList messages={ [] } />
+                </Segment>
+              </div>
+
+              <div className='UserSettings'>
+                <Segment>
+                  <UserSettings/>
+                </Segment>
+              </div>
+          </container>
+        </container>
+      </container>
     );
   }
 }
