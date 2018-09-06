@@ -4,71 +4,108 @@
   font-family: 'Roboto', sans-serif;
   height: 100%;
 }
+
+/* CSS for App.js */
+#FlexContainer {
+
+}
+
+#Heading {
+  
+}
+
+#Hello {
+
+}
+
+#Login {
+
+}
+
+#Messages {
+
+}
+
+#UserSettings {
+
+}
+/* End CSS for App.js */
+
 #Lemur {
   height: 385px;
   width: 100%;
 }
+
 #LemurContainer {
   height: 400px;
   border-radius: 25px;
 }
+
 #header {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
 #greeting {
   background: lightblue;
   height: 10%;
 }
+
 #loginform {
   
   border-radius: 25px;
 }
+
 #messagecontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background:#0098d3;
-
 }
+
 #inputmessage {
   height: 150px;
   width: 500px;
   margin-top: 5px;
 }
+
 #regform {
   position: relative;
   top: 10px;
 }
+
 #mainpage {
   background: lightblue;
   height: 50%;
 }
+
 #message {
   background: white;
   border-radius: 10px;
   border: 2px solid black;
   margin: 5px;
-
 }
+
 #headerImg {
   height: 100%;
  text-align: left;
  border: 2px solid black;
 }
+
 .container {
   float: right;
   width: 75%;
   margin-left: 5px;
 }
+
 #Userpage {
   position: relative;
   left: 14%;
-  
   width:76%;
   background: #0098d3;
   
 }
+
 #headline {
   position: relative;
   left: 45%;

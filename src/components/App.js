@@ -20,68 +20,44 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <RefreshButton/>
-        {this.props.profileHasBeenClicked && <ProfileCard />}
-        <Grid columns='equal'>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <Header />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
+      <container className="App">
+        <container className='FlexContainer'>
+          <div className='RefButton'>
+            <RefreshButton/>
+            {this.props.profileHasBeenClicked && <ProfileCard />}
+          </div>
+      
+            <div className='Heading'>  
+              <div>
+                <Header/>
+              </div>
+            </div>
+
+            <div className='Hello'>            
+              <div>
                 <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
+              </div>
+            </div>
+
+            <div className='Login'>
               <Segment>
                 <UserLoginScreen />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
+              </Segment>    
+            </div>
+
+            <div className='Messages'>
               <Segment>
                 <MessageList messages={ [] } />
               </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row columns={3}>
-            <Grid.Column>
-            </Grid.Column>
-            <Grid.Column>
+            </div>
+
+            <div className='UserSettings'>
               <Segment>
                 <UserSettings/>
               </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-
-        </div>
+            </div>
+        </container>
+      </container>
     );
   }
 }
