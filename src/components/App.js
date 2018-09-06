@@ -22,40 +22,42 @@ class App extends Component {
     return (
       <container className="App">
         <container className='FlexContainer'>
-          <div className='RefButton'>
-            <RefreshButton/>
-            {this.props.profileHasBeenClicked && <ProfileCard />}
-          </div>
-      
-            <div className='Heading'>  
-              <div>
-                <Header/>
+          <container className='InnerContainer'>
+            <div className='RefButton'>
+              <RefreshButton/>
+              {this.props.profileHasBeenClicked && <ProfileCard />}
+            </div>
+        
+              <div className='Heading'>  
+                
+                  <Header/>
+                
               </div>
-            </div>
 
-            <div className='Hello'>            
-              <div>
-                <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+              <div className='Hello'>            
+                <div>
+                  <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
+                </div>
               </div>
-            </div>
 
-            <div className='Login'>
-              <Segment>
-                <UserLoginScreen />
-              </Segment>    
-            </div>
+              <div className='Login'>
+                <Segment>
+                  <UserLoginScreen />
+                </Segment>    
+              </div>
 
-            <div className='Messages'>
-              <Segment>
-                <MessageList messages={ [] } />
-              </Segment>
-            </div>
+              <div className='Messages'>
+                <Segment>
+                  <MessageList messages={ [] } />
+                </Segment>
+              </div>
 
-            <div className='UserSettings'>
-              <Segment>
-                <UserSettings/>
-              </Segment>
-            </div>
+              <div className='UserSettings'>
+                <Segment>
+                  <UserSettings/>
+                </Segment>
+              </div>
+          </container>
         </container>
       </container>
     );

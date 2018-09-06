@@ -36,9 +36,9 @@ class MessageList extends Component {
     return (
       <React.Fragment>
         <div id="messagecontainer">
-          <Form  onSubmit={ this.onHandleSubmit }>
+          <Form className="MessageForm" onSubmit={ this.onHandleSubmit }>
             <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
-            <Button >Submit</Button>
+            <Button className="MessageSubmit" color='yellow'>Submit</Button>
           </Form>
           <Comment.Group>
             { this.props.messageList.map( message => <Message key={ Date.now().toString() + message.id }
