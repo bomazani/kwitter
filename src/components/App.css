@@ -132,8 +132,8 @@
   height: 50%;
 }
 
-#message {
-  background: white;
+.comment {
+  background-color: white;
   border-radius: 10px;
   border: 2px solid black;
   margin: 5px;
@@ -150,6 +150,7 @@
 } */
 
 .container {
+  
   float: right;
   width: 75%;
   margin-left: 5px;
