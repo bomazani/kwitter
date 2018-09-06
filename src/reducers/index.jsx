@@ -1,4 +1,16 @@
-import { POST_LIKE, DELETE_LIKE, LOGIN_USER, LOG_ERROR, REGISTER_USER, GET_MESSAGES, POST_MESSAGE, LOGOUT_USER, GET_USER, GET_USERS_LIST, VIEW_PROFILE } from "../actions";
+import { POST_LIKE,
+    DELETE_LIKE,
+    LOGIN_USER,
+    LOG_ERROR,
+    REGISTER_USER,
+    GET_MESSAGES,
+    POST_MESSAGE,
+    LOGOUT_USER,
+    GET_USER,
+    GET_USERS_LIST,
+    VIEW_PROFILE,
+    EXIT_VIEW 
+} from "../actions";
 
 const initialState = { session: {}, user: {}, messages: [], userList: [], clickedProfileInfo: {}, profileHasBeenClicked: false }
 
@@ -59,6 +71,11 @@ export default (state = initialState, action) => {
         ...state,
         clickedProfileInfo: action.profileInfo,
         profileHasBeenClicked: true
+      }
+    case EXIT_VIEW:
+      return {
+        ...state,
+        profileHasBeenClicked: false
       }
     case POST_LIKE:
       return {

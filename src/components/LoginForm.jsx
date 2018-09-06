@@ -36,7 +36,7 @@ class LoginForm extends React.Component {
                 <Grid columns='equal'>
                 <Grid.Column></Grid.Column>
                 <Grid.Column>
-                    <Form>
+                  <Form>
                         <Form.Field>
                             <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                             <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>

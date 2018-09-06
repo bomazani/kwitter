@@ -18,7 +18,7 @@ class UserSettings extends Component {
     handleChange = (e, { value }) => this.setState({ value })
     render() {
         return (
-            <div>
+            <div className='Login'>
                 <Form>
                     <Form.Group widths='equal'>
                       <Form.Input fluid label='Change Display Name' placeholder='New Display Name' />

@@ -1,4 +1,6 @@
 import Axios from 'axios';
+import { push } from 'connected-react-router';
+
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOG_ERROR = 'LOGIN_ERROR';
 export const LOGOUT_USER = 'LOGOUT_USER';
@@ -10,6 +12,7 @@ export const POST_MESSAGE = 'POST_MESSAGE';
 export const POST_LIKE = 'POST_LIKE'
 export const DELETE_LIKE = 'DELETE_LIKE'
 export const VIEW_PROFILE = 'VIEW_PROFILE';
+export const EXIT_VIEW = 'EXIT_VIEW';
 
 const API_URL = 'https://kwitter-api.herokuapp.com/';
 
@@ -40,7 +43,9 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
             })
             // Call getMessages
     } ).then( () => {
-        dispatch(getMessages())
+        dispatch( push( '/messages' ) )
+    } ).then( () => {
+        dispatch( getMessages() )
     } )
 }
 
@@ -82,6 +87,10 @@ export const viewProfile = id => dispatch => {
     Axios.get( 'https://kwitter-api.herokuapp.com/users/' + id ).then(res => {
         dispatch({ type: VIEW_PROFILE, profileInfo: res.data.user })
     })
+}
+
+export const exitView = () => dispatch => {
+    dispatch({ type: EXIT_VIEW })
 }
 
 export const logError = ( err ) => dispatch => {
