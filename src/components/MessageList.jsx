@@ -20,7 +20,6 @@ class MessageList extends Component {
     updateMessage = (e) => {
         this.setState({
           message: e.target.value,
-
         })
     }
 

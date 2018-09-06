@@ -19,7 +19,7 @@ class Message extends Component {
             {this.props.message}
           </Comment.Text>
           <Comment.Actions>
-            <Icon color='red' name='heart' /> {this.props.id}
+            <Icon color='red' name='heart' /> {this.props.numLikes}
           </Comment.Actions>
         </Comment.Content>
       </Comment>
