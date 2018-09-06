@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Segment } from 'semantic-ui-react';
+import { Link, Route } from 'react-router-dom';
 
 // Components
 import MessageList from './MessageList.jsx';

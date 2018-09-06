@@ -156,7 +156,6 @@
   left: 14%;
   width:76%;
   background: #0098d3;
-  
 }
 
 #headline {
@@ -169,7 +168,7 @@
 }
 
 #refresh {
-  display: absolute;
+  position: fixed;
   top: 50px;
   left: 50px;
 }
