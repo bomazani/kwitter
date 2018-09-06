@@ -10,6 +10,7 @@ export const POST_MESSAGE = 'POST_MESSAGE';
 export const POST_LIKE = 'POST_LIKE'
 export const DELETE_LIKE = 'DELETE_LIKE'
 export const VIEW_PROFILE = 'VIEW_PROFILE';
+export const EXIT_VIEW = 'EXIT_VIEW';
 
 const API_URL = 'https://kwitter-api.herokuapp.com/';
 
@@ -81,6 +82,10 @@ export const viewProfile = id => dispatch => {
     Axios.get( 'https://kwitter-api.herokuapp.com/users/' + id ).then(res => {
         dispatch({ type: VIEW_PROFILE, profileInfo: res.data.user })
     })
+}
+
+export const exitView = () => dispatch => {
+    dispatch({ type: EXIT_VIEW })
 }
 
 export const logError = ( err ) => dispatch => {
