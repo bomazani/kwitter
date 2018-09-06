@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Segment, Form, Input, Button } from 'semantic-ui-react';
 import { loginUser, logoutUser } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     state = {
@@ -29,7 +30,7 @@ class LoginForm extends React.Component {
             <Grid columns='equal'>
                <Grid.Column></Grid.Column>
                <Grid.Column>
-                <Form>
+                 <Form action='/#/messages'>
                     <Form.Field>
                         <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
                         <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
@@ -49,11 +50,11 @@ const mapStatetoProps = state => ({
     session: state.session
 })
 
-const mapDispatchtoProps = (dispatch) => {
+const mapDispatchtoProps = dispatch => {
     return {
-        loginUser: (username, password) => dispatch(loginUser(username, password)),
-        logoutUser: () => dispatch(logoutUser())
+        loginUser: ( username, password ) => dispatch( loginUser( username, password ) ),
+        logoutUser: () => dispatch( logoutUser() )
     }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(LoginForm);
+export default connect( mapStatetoProps, mapDispatchtoProps )( withRouter( LoginForm ) );
