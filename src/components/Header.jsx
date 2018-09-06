@@ -1,6 +1,6 @@
 import React from 'react';
-// import Lemur from "../images/KwitterBackground.jpg";
-import Lemur from "../images/KwitterLemurs.jpg";
+import Lemur from "../images/KwitterBackground.jpg";
+// import Lemur from "../images/KwitterLemurs.jpg";
 
 
 console.log(Lemur);
