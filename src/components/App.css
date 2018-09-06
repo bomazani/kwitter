@@ -14,7 +14,36 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  
+}
+
+.TitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  border: blue 2px;
+  background-color: Blue;
+}
+
+.LeftTitle {
+  flex-direction: left;
+  width: 27%;
+  border: red 2px;
+  background-color: red;
+}
+
+.CenterTitle {
+  flex-direction: center;
+  width: 46%;
+  border: green 2px;
+  background-color: green;
+}
+
+.RightTitle {
+  flex-direction: right;
+  width: 27%;
+  border: yellow 2px;
+  background-color: yellow;
 }
 
 .InnerContainer {
@@ -29,7 +58,6 @@
 .Heading {
   width: 45%;
   /* max-height: 100vh; */
-  
 }
 
 .Hello {
@@ -132,8 +160,9 @@
   height: 50%;
 }
 
-.message {
-  background: white;
+
+.comment {
+  background-color: white !important;
   border-radius: 10px;
   border: 2px solid black;
   margin: 5px;
@@ -150,6 +179,7 @@
 } */
 
 .container {
+  
   float: right;
   width: 75%;
   margin-left: 5px;
@@ -175,6 +205,10 @@
   position: fixed;
   top: 50px;
   left: 50px;
+}
+
+.RefreshButton {
+
 }
 
 .column {

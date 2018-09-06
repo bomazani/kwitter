@@ -17,7 +17,7 @@ class RefreshButton extends Component {
 
 const mapDispatchToProps = ( dispatch ) => {
     return {
-      getMessages: () => dispatch( getMessages(200) )
+      getMessages: () => dispatch( getMessages(200))
     }
   }
 

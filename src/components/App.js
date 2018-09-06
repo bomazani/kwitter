@@ -13,8 +13,12 @@ import Header from './Header.jsx';
 import UserSettings from './UserSettings.jsx';
 // import UserPage from "./UserPage.jsx";
 import RefreshButton from './RefreshButton.jsx';
-import ProfileCard from './ProfileCard.jsx';
+
+import ProfileCard from './ProfileCard.jsx'
+import LogoutButton from './LogoutButton.jsx';
+
 import { exitView } from '../actions';
+
 
 // static files
 import './App.css';
@@ -24,18 +28,27 @@ class App extends Component {
     return (
       <container className="App">
         <container className='FlexContainer'>
-          <container className='InnerContainer'>
-                {this.props.profileHasBeenClicked && <div className="profile-wrap">
-                                                        <div className="exit-wrap"><div className="exit-btn" onClick={ () => this.props.exitView() }>X</div></div>
-                                                        <div className="info-wrap"><ProfileCard /></div>
-                                                      </div>}
-              <div className='RefButton'>
-                <RefreshButton/>
-              </div>
-              <div className='Heading'>
-                  <Header/>
-              </div>
 
+          <container className='TitleContainer'>
+            <div className='LeftTitle'>LEFT</div>
+            <div className='CenterTitle'>
+              <Header/>
+            </div>
+            <div className='RightTitle'>
+              <div className='LogoutButton'>
+                <LogoutButton/>
+              </div>
+            </div>
+          </container>
+          <container className='InnerContainer'>
+            <div className='Heading'>  
+              <div className='RefreshButton'>
+                <RefreshButton/>
+                {this.props.profileHasBeenClicked && <ProfileCard />}
+              </div>
+              
+              
+            </div> 
               <div className='Hello'>
                 <div>
                   <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>

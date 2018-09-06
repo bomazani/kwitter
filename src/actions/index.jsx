@@ -31,7 +31,7 @@ export const loginUser = ( username, password ) => (dispatch, getState) => {
         }
     } ).then( () => {
             // Get list of users and save to state
-            Axios.get( 'https://kwitter-api.herokuapp.com/users' ).then( res => {
+            Axios.get( 'https://kwitter-api.herokuapp.com/users?limit=1000' ).then( res => {
                 console.log( typeof( res.data.users ), "\n", res.data.users )
                 dispatch( { type: GET_USERS_LIST, userList: res.data.users } )
             } )
@@ -59,6 +59,7 @@ export const getMessages = (limit = 1000) => dispatch =>{
 export const logoutUser = () => dispatch => {
 
     dispatch( { type: LOGOUT_USER } )
+    dispatch( push('/'))
 }
 
 export const registerUser = (username, displayName, password) => dispatch => {
