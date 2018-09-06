@@ -33,7 +33,7 @@ class MessageList extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className='Messages'>
         <div id="messagecontainer">
           <Form className="MessageForm" onSubmit={ this.onHandleSubmit }>
             <Input id="inputmessage" value={ this.state.message } placeholder='New Message' onChange={ this.updateMessage }/>
@@ -48,7 +48,7 @@ class MessageList extends Component {
 							userLike={ message.likes.find( like => like.userId === this.props.userId ) } /> ) }
           </Comment.Group>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

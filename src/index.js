@@ -3,6 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter } from "react-router-dom";
 
+// Connect Router
+import { createBrowserHistory } from 'history'
+import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router'
 
 // Import redux stufff
 import { createStore, applyMiddleware, compose } from "redux";
@@ -19,14 +22,17 @@ import 'semantic-ui-css/semantic.css';
 
 // Setup Redux Devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+
+// Setup store and history
+const history = createBrowserHistory();
+const store = createStore( connectRouter(history)(reducers), composeEnhancers(applyMiddleware(thunk), applyMiddleware( routerMiddleware( history)) ));
 
 // Render
 ReactDOM.render(
-  <Provider store={store}>
-    <HashRouter basename={process.env.PUBLIC_URL}>
+  <Provider store={ store }>
+    <ConnectedRouter history={ history }>
       <App />
-    </HashRouter>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );
