@@ -27,20 +27,20 @@ class LoginForm extends React.Component {
 
         return (
             <Segment raised  id="logincolor">
-            <Grid columns='equal'>
-               <Grid.Column></Grid.Column>
-               <Grid.Column>
-                 <Form action='/#/messages'>
-                    <Form.Field>
-                        <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
-                        <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
-                    </Form.Field>
-                    <Button color='teal' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
-                    { session.isLoggedIn && <Button  type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
-                </Form>
-              </Grid.Column>
-              <Grid.Column></Grid.Column>
-            </Grid>
+                <Grid columns='equal'>
+                <Grid.Column></Grid.Column>
+                <Grid.Column>
+                    <Form>
+                        <Form.Field>
+                            <Input value={this.state.username} placeholder='Username' onChange={this.updateUsername}/>
+                            <Input value={this.state.password} placeholder='Password' type='password' onChange={this.updatePassword}/>
+                        </Form.Field>
+                        <Button color='yellow' type='submit' onClick={ () => this.props.loginUser(this.state.username, this.state.password) }>Login</Button>
+                        { session.isLoggedIn && <Button color='blue' type='submit' onClick={ () => this.props.logoutUser()}>Logout</Button> }
+                    </Form>
+                </Grid.Column>
+                <Grid.Column></Grid.Column>
+                </Grid>
             </Segment>
         )
     }
