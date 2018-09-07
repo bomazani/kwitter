@@ -10,7 +10,8 @@ import { POST_LIKE,
     GET_USERS_LIST,
     VIEW_PROFILE,
     EXIT_VIEW,
-    DELETE_MESSAGE
+    DELETE_MESSAGE,
+    UPDATE_INFO
 } from "../actions";
 
 const initialState = { session: {}, user: {}, messages: [], userList: [], clickedProfileInfo: {}, profileHasBeenClicked: false }
@@ -85,6 +86,11 @@ export default (state = initialState, action) => {
     case DELETE_LIKE:
       return {
         ...state,
+      }
+    case UPDATE_INFO:
+      return {
+          ...state,
+          user: action.data.user
       }
     default:
       return state

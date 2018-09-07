@@ -44,7 +44,7 @@ class App extends Component {
             </div>
             <div className='RightTitle'>
               <div className='LogoutButton'>
-                <UpInfoButton />
+                {this.props.pathname === '/settings' ? null : <UpInfoButton />}
                 <LogoutButton/>
               </div>
             </div>
@@ -83,7 +83,8 @@ class App extends Component {
 const mapStatetoProps = state => ({
   messageArray: state.messages,
   loginuser: state.session.username,
-  profileHasBeenClicked: state.profileHasBeenClicked
+  profileHasBeenClicked: state.profileHasBeenClicked,
+  pathname: state.router.location.pathname
 })
 
 const mapDispatchToProps = ( dispatch ) => {

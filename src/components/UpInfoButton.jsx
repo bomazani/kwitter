@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
-import { updateInfo } from '../actions';
+import { goTo } from '../actions';
 import { connect } from 'react-redux';
+import { Button } from 'semantic-ui-react';
 
 
 class UpInfoButton extends Component {
     render (){
         return (
             <div className='logout' >
-                <a href='/settings'><Button color='blue' type='submit'>Update Info</Button></a>
+                <Button color='blue' type='submit' onClick={() => this.props.goToSettings()}>Update Info</Button>
             </div>
         )}
 }
 
-// const mapStatetoProps = state => ()
+const mapDispatchToProps = (dispatch) => {
+    return {
+        goToSettings: () => {
+            dispatch(goTo('/settings'))
+        }
+    }
+}
 
-// const mapDispatchtoProps = dispatch => {}
-
-
-export default connect()( UpInfoButton );
+export default connect(undefined, mapDispatchToProps)(UpInfoButton);
