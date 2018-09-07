@@ -10,7 +10,7 @@ class RefreshButton extends Component {
     render (){
         return (
             <div id='refresh' className='refresh' >
-                <Button onClick={() => this.props.getMessages()}>Refresh Messages</Button>
+                <Button color='blue' onClick={() => this.props.getMessages()}>Refresh Messages</Button>
             </div>
         )}
 }
