@@ -16,8 +16,7 @@ class ProfileCard extends Component {
                     <span class="date">{ this.props.clickedProfileInfo.displayName }</span>
                 </div>
                 <div class="description">
-                {/* { this.props.clickedProfileInfo.about } */}
-                Filler shit to see if there is an about section that can be seen.
+                    { this.props.clickedProfileInfo.about }
                 </div>
             </div>
             <div class="extra content">

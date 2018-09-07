@@ -14,6 +14,7 @@ export const DELETE_LIKE = 'DELETE_LIKE';
 export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const VIEW_PROFILE = 'VIEW_PROFILE';
 export const EXIT_VIEW = 'EXIT_VIEW';
+export const UPDATE_INFO = 'UPDATE_INFO';
 
 const API_URL = 'https://kwitter-api.herokuapp.com';
 
@@ -140,4 +141,21 @@ export const deleteMessage = id => ( dispatch, getState ) => {
 
   dispatch( getMessages( getState().session.messageLimit ) )
 
+}
+
+export const updateInfo = ( displayName, password, about ) => ( dispatch, getState ) => {
+    Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
+    console.log('user info:', displayName, password, about)
+    Axios.patch( API_URL + '/users', {
+        displayName: displayName === '' ? undefined : displayName,
+        password: password === '' ? undefined : password,
+        about: about === '' ? undefined : about
+    } ).then( res => {
+        dispatch( { type: UPDATE_INFO, data: res.data } )
+        dispatch(push('/messages'))
+    }).catch( e => console.log('updateInfo', e ) )
+}
+
+export const goTo = ( endpoint ) => ( dispatch ) => {
+    dispatch( push( endpoint ) )
 }
