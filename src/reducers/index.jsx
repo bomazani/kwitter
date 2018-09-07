@@ -9,7 +9,8 @@ import { POST_LIKE,
     GET_USER,
     GET_USERS_LIST,
     VIEW_PROFILE,
-    EXIT_VIEW 
+    EXIT_VIEW,
+    DELETE_MESSAGE
 } from "../actions";
 
 const initialState = { session: {}, user: {}, messages: [], userList: [], clickedProfileInfo: {}, profileHasBeenClicked: false }

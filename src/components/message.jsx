@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Comment } from 'semantic-ui-react';
-import { viewProfile, deleteLike, postLike } from '../actions';
+import { viewProfile, deleteMessage, deleteLike, postLike } from '../actions';
 import profileImg from '../images/Lemur_icon.png';
 import './App.css';
 
@@ -9,9 +9,8 @@ class Message extends Component {
 
 		toggleLike = ( e ) => {
 		console.log( this.props )
-  
     if ( this.props.userLike ) {
-			this.props.deleteLike( this.props.message.id )
+			this.props.deleteLike( this.props.userLike.id )
 		} else {
 			this.props.postLike( this.props.message.id )
 		}
@@ -19,7 +18,7 @@ class Message extends Component {
 	}
 
 	delete = ( e ) => {
-		this.props.deleteLike( this.props.message.id )
+		this.props.deleteMessage( this.props.message.id )
 	}
 
 	render() {
@@ -34,7 +33,7 @@ class Message extends Component {
 						{ this.props.message.text }
 					</Comment.Text>
 					<Comment.Actions onClick={ this.toggleLike } >
-						<Icon color='red' name='heart' /> { this.props.message.likes.length }
+						<Icon inverted={ this.props.userLike? false : true } color={ this.props.userLike? 'red' : 'gray' } bordered={ this.props.userLike? true : true } name='heart' /> { this.props.message.likes.length }
 					</Comment.Actions>
 				</Comment.Content>
 				<Button inverted color='red' onClick={ this.delete }>X</Button>
@@ -46,7 +45,8 @@ class Message extends Component {
 const mapDispatchtoProps = dispatch => {
 	return {
 		viewProfile: id => dispatch( viewProfile( id ) ),
-		deleteLike: id => dispatch( deleteLike( id ) ),
+    deleteLike: id => dispatch( deleteLike( id ) ),
+		deleteMessage: id => dispatch( deleteMessage( id ) ),
 		postLike: id => dispatch( postLike( id ) )
 	}
 }

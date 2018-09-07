@@ -41,14 +41,14 @@ class App extends Component {
             </div>
           </container>
           <container className='InnerContainer'>
-            <div className='Heading'>  
+            <div className='Heading'>
               <div className='RefreshButton'>
                 <RefreshButton/>
                 {this.props.profileHasBeenClicked && <ProfileCard />}
               </div>
-              
-              
-            </div> 
+
+
+            </div>
               <div className='Hello'>
                 <div>
                   <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>
