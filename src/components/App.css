@@ -218,7 +218,7 @@
 }
 
 .profile-wrap {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   margin: 0 auto;
   height: 100vh;
