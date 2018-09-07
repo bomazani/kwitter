@@ -220,7 +220,7 @@
 .profile-wrap {
   z-index: 1;
   position: fixed;
-  margin: 0;
+  margin: 0 auto;
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -263,8 +263,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+<<<<<<< HEAD
+}
+=======
 }
 
 /* .ui_segment {
   width: 100%;
 } */
+>>>>>>> develop
