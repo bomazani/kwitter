@@ -3,8 +3,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon, Segment } from 'semantic-ui-react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Segment } from 'semantic-ui-react';
+import { Route, Switch } from 'react-router-dom';
 
 // Components
 import MessageList from './MessageList.jsx';
@@ -41,14 +41,14 @@ class App extends Component {
             </div>
           </container>
           <container className='InnerContainer'>
-            <div className='Heading'>  
+            <div className='Heading'>
               <div className='RefreshButton'>
                 <RefreshButton/>
                 {this.props.profileHasBeenClicked && <ProfileCard />}
               </div>
-              
-              
-            </div> 
+
+
+            </div>
               <div className='Hello'>
                 <div>
                   <div>Hello, {this.props.loginuser? this.props.loginuser : 'Please Login or Register'}! </div>

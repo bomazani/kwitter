@@ -15,8 +15,8 @@ class LogoutButton extends Component {
 
     render (){
         return (
-            <div id='logout' class='logout' className='logout' >
-                 <Button color='blue' type='submit' onClick={ () => { this.props.logoutUser(); this.clearForm()}}>Logout</Button> 
+            <div className='logout' >
+                 <Button color='blue' type='submit' onClick={ () => { this.props.logoutUser(); this.clearForm()}}>Logout</Button>
             </div>
         )}
 }
