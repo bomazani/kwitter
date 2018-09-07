@@ -16,6 +16,7 @@ import RefreshButton from './RefreshButton.jsx';
 
 import ProfileCard from './ProfileCard.jsx'
 import LogoutButton from './LogoutButton.jsx';
+import UpInfoButton from './UpInfoButton.jsx';
 
 import { exitView } from '../actions';
 
@@ -36,6 +37,7 @@ class App extends Component {
             </div>
             <div className='RightTitle'>
               <div className='LogoutButton'>
+                <UpInfoButton />
                 <LogoutButton/>
               </div>
             </div>
