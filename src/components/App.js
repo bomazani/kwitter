@@ -50,7 +50,7 @@ class App extends Component {
           <container className='InnerContainer'>
             <div className='Heading'>
               <div className='RefreshButton'>
-                <RefreshButton/>
+                {/* <RefreshButton/> */}
                 {this.props.profileHasBeenClicked && <ProfileCard />}
               </div>
 
