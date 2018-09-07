@@ -28,22 +28,16 @@
 .LeftTitle {
   flex-direction: left;
   width: 27%;
-  border: red 2px;
-  background-color: red;
 }
 
 .CenterTitle {
   flex-direction: center;
   width: 46%;
-  border: green 2px;
-  background-color: green;
 }
 
 .RightTitle {
   flex-direction: right;
   width: 27%;
-  border: yellow 2px;
-  background-color: yellow;
 }
 
 .InnerContainer {
@@ -93,7 +87,7 @@
 }
 
 .RegisterForm {
-
+  
 }
 /* End CSS for user-login-screen */
 
@@ -208,7 +202,15 @@
 }
 
 .RefreshButton {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+}
 
+.LogoutButton {
+  position: fixed;
+  top: 50px;
+  right: 40px;
 }
 
 .column {

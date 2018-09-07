@@ -30,7 +30,9 @@ class App extends Component {
         <container className='FlexContainer'>
 
           <container className='TitleContainer'>
-            <div className='LeftTitle'>LEFT</div>
+            <div className='LeftTitle'>
+              {/* RefreshButton */}
+            </div>
             <div className='CenterTitle'>
               <Header/>
             </div>
