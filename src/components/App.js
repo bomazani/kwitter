@@ -62,14 +62,15 @@ class App extends Component {
                 </div>
               </div>
 
-              <Segment>
-                <Switch>
-                  <Route exact path='/' render={() => (<UserLoginScreen/>) } />
-                  <Route path='/messages' render={() => ( <MessageList/> ) } />
-                  <Route path='/settings' render={() => (<UserSettings/>) } />
-                </Switch>
-              </Segment>
-
+              <div className='DisplayWindow'>
+                <Segment>
+                  <Switch>
+                    <Route exact path='/' render={() => (<UserLoginScreen/>) } />
+                    <Route path='/messages' render={() => ( <MessageList/> ) } />
+                    <Route path='/settings' render={() => (<UserSettings/>) } />
+                  </Switch>
+                </Segment>
+              </div>
           </container>
         </container>
       </container>
