@@ -3,8 +3,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon, Segment } from 'semantic-ui-react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Segment } from 'semantic-ui-react';
+import { Route, Switch } from 'react-router-dom';
 
 // Components
 import MessageList from './MessageList.jsx';

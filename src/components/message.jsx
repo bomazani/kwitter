@@ -8,11 +8,12 @@ import './App.css';
 class Message extends Component {
 
 		toggleLike = ( e ) => {
-		console.log( 'event', e, '\n', 'liked?', this.props, 'this', this )
-		if ( this.props.userLike ) {
-			deleteLike( this.props.message.id )
+		console.log( this.props )
+  
+    if ( this.props.userLike ) {
+			this.props.deleteLike( this.props.message.id )
 		} else {
-			postLike( this.props.message.id )
+			this.props.postLike( this.props.message.id )
 		}
 
 	}

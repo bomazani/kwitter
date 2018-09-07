@@ -29,7 +29,6 @@ class LoginForm extends React.Component {
 //         })
 //     }
     render() {
-        const { session } =  this.props
 
         return (
             <Segment raised  id="logincolor">

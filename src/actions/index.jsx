@@ -14,7 +14,7 @@ export const DELETE_LIKE = 'DELETE_LIKE'
 export const VIEW_PROFILE = 'VIEW_PROFILE';
 export const EXIT_VIEW = 'EXIT_VIEW';
 
-const API_URL = 'https://kwitter-api.herokuapp.com/';
+const API_URL = 'https://kwitter-api.herokuapp.com';
 
 export const loginUser = ( username, password ) => (dispatch, getState) => {
     console.log("username", username)
@@ -100,22 +100,25 @@ export const logError = ( err ) => dispatch => {
 export const postLike = id => ( dispatch, getState ) => {
   // set the auth token
   Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
-
+  console.log( 'POST_LIKE' )
   // post request
   Axios.post( API_URL + '/likes',
     { userId: getState().user.id, messageId: id } ).then( res => {
+			console.log( res.data )
       dispatch( { type: POST_LIKE, data: res.data } )
       dispatch( getMessages( getState().session.messageLimit ) )
-			console.log( res.data )
     } )
 
 }
 
 export const deleteLike = id => ( dispatch, getState ) => {
-
+  console.log( 'DELETE_LIKE' )
+  let dURL =  API_URL + '/likes/' + id
+  console.log( dURL )
   Axios.defaults.headers.common['Authorization'] = 'Bearer ' + getState().session.token
-  Axios.post( API_URL + '/likes/' + id ).then( res => {
+  Axios.delete( dURL ).then( res => {
 		dispatch( { type: DELETE_LIKE, data: res.data } )
+    dispatch( getMessages( getState().session.messageLimit ) )
 		console.log( res.data )
 	} )
 
