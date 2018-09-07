@@ -36,7 +36,7 @@ class Message extends Component {
 						<Icon inverted={ this.props.userLike? false : true } color={ this.props.userLike? 'red' : 'gray' } bordered={ this.props.userLike? true : true } name='heart' /> { this.props.message.likes.length }
 					</Comment.Actions>
 				</Comment.Content>
-				<Button inverted color='red' onClick={ this.delete }>X</Button>
+				<Button id='deleteMsgBtn' inverted color='red' onClick={ this.delete }>X</Button>
 			</Comment>
 		)
 	}

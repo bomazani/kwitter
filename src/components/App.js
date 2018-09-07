@@ -31,7 +31,7 @@ class App extends Component {
         {this.props.profileHasBeenClicked && <ProfileCard />}
         <container className='FlexContainer'>
 
-          <container className='TitleContainer'>
+          <container className='TitleContainer' id='sticky'>
             <div className='LeftTitle'>
               <div className='RefreshButton'>
                 <RefreshButton/>
