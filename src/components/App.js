@@ -31,7 +31,14 @@ class App extends Component {
         <container className='FlexContainer'>
 
           <container className='TitleContainer'>
-            <div className='LeftTitle'>LEFT</div>
+            <div className='LeftTitle'>
+              {/* RefreshButton */}
+              <div className='RefreshButton'>
+                <RefreshButton/>
+                {this.props.profileHasBeenClicked && <ProfileCard />}
+              </div>
+
+            </div>
             <div className='CenterTitle'>
               <Header/>
             </div>
@@ -45,7 +52,7 @@ class App extends Component {
           <container className='InnerContainer'>
             <div className='Heading'>
               <div className='RefreshButton'>
-                <RefreshButton/>
+                {/* <RefreshButton/> */}
                 {this.props.profileHasBeenClicked && <ProfileCard />}
               </div>
 
@@ -57,14 +64,15 @@ class App extends Component {
                 </div>
               </div>
 
-              <Segment>
-                <Switch>
-                  <Route exact path='/' render={() => (<UserLoginScreen/>) } />
-                  <Route path='/messages' render={() => ( <MessageList/> ) } />
-                  <Route path='/settings' render={() => (<UserSettings/>) } />
-                </Switch>
-              </Segment>
-
+              <div className='DisplayWindow'>
+                <Segment>
+                  <Switch>
+                    <Route exact path='/' render={() => (<UserLoginScreen/>) } />
+                    <Route path='/messages' render={() => ( <MessageList/> ) } />
+                    <Route path='/settings' render={() => (<UserSettings/>) } />
+                  </Switch>
+                </Segment>
+              </div>
           </container>
         </container>
       </container>
