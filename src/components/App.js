@@ -28,14 +28,13 @@ class App extends Component {
   render() {
     return (
       <container className="App">
+        {this.props.profileHasBeenClicked && <ProfileCard />}
         <container className='FlexContainer'>
 
           <container className='TitleContainer' id='sticky'>
             <div className='LeftTitle'>
-              {/* RefreshButton */}
               <div className='RefreshButton'>
                 <RefreshButton/>
-                {this.props.profileHasBeenClicked && <ProfileCard />}
               </div>
 
             </div>
@@ -51,10 +50,6 @@ class App extends Component {
           </container>
           <container className='InnerContainer'>
             <div className='Heading'>
-              <div className='RefreshButton'>
-                {/* <RefreshButton/> */}
-                {this.props.profileHasBeenClicked && <ProfileCard />}
-              </div>
 
 
             </div>
