@@ -102,20 +102,10 @@
 
 
 #Lemur {
-  /* height: 385px; */
   width: 100%;
   max-height: 35vh;
+  margin-top:3px;
 }
-
-/* #LemurContainer {
-  height: 400px;
-  border-radius: 25px;
-} */
-
-/* #header {
-  font-size: 20px;
-  margin-bottom: 20px;
-} */
 
 #greeting {
   background: lightblue;
