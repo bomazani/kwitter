@@ -1,7 +1,6 @@
 // Import from existing Libraries
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
 
 // Connect Router
 import { createBrowserHistory } from 'history'

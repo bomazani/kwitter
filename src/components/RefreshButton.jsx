@@ -9,7 +9,7 @@ import './App.css';
 class RefreshButton extends Component {
     render (){
         return (
-            <div id='refresh' class='refresh' className='refresh' >
+            <div id='refresh' className='refresh' >
                 <Button color='blue' onClick={() => this.props.getMessages()}>Refresh Messages</Button>
             </div>
         )}
