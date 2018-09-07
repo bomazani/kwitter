@@ -32,6 +32,11 @@ class App extends Component {
           <container className='TitleContainer'>
             <div className='LeftTitle'>
               {/* RefreshButton */}
+              <div className='RefreshButton'>
+                <RefreshButton/>
+                {this.props.profileHasBeenClicked && <ProfileCard />}
+              </div>
+
             </div>
             <div className='CenterTitle'>
               <Header/>
@@ -44,10 +49,10 @@ class App extends Component {
           </container>
           <container className='InnerContainer'>
             <div className='Heading'>  
-              <div className='RefreshButton'>
+              {/* <div className='RefreshButton'>
                 <RefreshButton/>
                 {this.props.profileHasBeenClicked && <ProfileCard />}
-              </div>
+              </div> */}
               
               
             </div> 
